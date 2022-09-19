@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- 
+        header  有语义的div元素,用于表示页面头部区域.内部可以存放导航条或简介信息内容
+        main    有语义的div元素,用于表示页面主题内容区域,每一个页面只能有一个该元素.内部可以存放与当前页面业务相关的内容
+        footer  有语义的div元素,用于表示页面底部区域.内部可以存底部导航,公司相关业务,法务,资质相关的信息
+        nav     有语义的div元素,用于呈现页面中主导航链接,一般会放在header 或 main中, footer中的导航列表不需要使用nav 
+        section 有语义的div元素,用于对相关主题内容进行分组表示一组内容.
+        article 有语义的div元素,用于呈现一个完整文章,网页入口 博客入口 帖子 文章
+     -->
+
+
+    <header>
+        <h1>>Training with GEC</h1>
+        <nav>
+            <ul>
+                <li><a href="#stealth">Stealth &amp; Agility</a></li>
+                <li><a href="#combat">Combat</a></li>
+                <li><a href="#weapons">Weapons</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="stealth">
+            <h2>Stealth &amp; Agility Training</h2>
+            <article>
+                <h3>Climb foliage quickly using a minimum spanning tree approach</h3>
+            </article>
+            <article>
+                <h3>No training is NP-complete without parkour</h3>
+            </article>
+        </section>
+        <section id="combat">
+            <h2>Combat Training</h2>
+            <article>
+                <h3>Dispatch multiple enemies with multithreaded tactics</h3>
+            </article>
+            <article>
+                <h3>Goodbye world: 5 proven ways to knock out an opponent</h3>
+            </article>
+        </section>
+        <section id="weapons">
+            <h2>Weapons Training</h2>
+            <article>
+                <h3>Swords: the best tool to literally divide and conquer</h3>
+            </article>
+            <article>
+                <h3>Breadth-first or depth-first in multi-weapon training?</h3>
+            </article>
+        </section>
+    </main>
+
+    <footer>&copy; 2020 GEC</footer>
+
+
+</body>
+
+</html>

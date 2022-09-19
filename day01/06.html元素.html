@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .middle-list,
+        .small-list {
+            display: none;
+        }
+
+        .big-list>li:hover .middle-list {
+            display: block;
+        }
+
+
+        .middle-list>li:hover .small-list {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 align="center">hello world</h1>
+
+    <ul class="big-list" type="square">
+        <li>
+            HTML
+            <ul class="middle-list">
+                <li>h1~h6标签</li>
+                <li>a标签</li>
+                <li>p标签</li>
+                <li>ul标签</li>
+            </ul>
+        </li>
+        <li>CSS
+            <ol class="middle-list">
+                <li>选择器</li>
+                <li>盒子模型</li>
+                <li>浮动</li>
+                <li>定位</li>
+                <li>形变
+                    <ul class="small-list">
+                        <li>偏移</li>
+                        <li>缩放</li>
+                        <li>旋转</li>
+                    </ul>
+                </li>
+            </ol>
+        </li>
+        <li>JavaSCript
+            <ul class="middle-list">
+                <li>基础</li>
+                <li>面向对象</li>
+                <li>DOM</li>
+                <li>BOM</li>
+            </ul>
+        </li>
+    </ul>
+    <!-- 
+    <ol type="i">
+        <li>列表项1</li>
+        <li>列表项2</li>
+        <li>列表项3</li>
+        <li>列表项4</li>
+        <li>列表项5</li>
+    </ol>
+ -->
+
+    <!-- 
+        自定义列表
+        dl 自定义列表
+        dt 列表项标题,(不可嵌套其他块级元素的块级元素)
+        dd 当前列表项详细信息
+     -->
+    <dl>
+        <dt>广东</dt>
+        <dd>广州</dd>
+        <dd>深圳</dd>
+        <dd>肇庆</dd>
+        <dt>广西</dt>
+        <dd>广州</dd>
+        <dd>深圳</dd>
+        <dd>肇庆</dd>
+    </dl>
+
+</body>
+
+</html>
