@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .new-table,
+        .new-table th,
+        .new-table td {
+            border: 1px solid black ;
+        }
+
+        .new-table {
+            border-spacing: 5px;
+            width: 80%;
+            height: 450px;
+        }
+
+        .new-table th,
+        .new-table td {
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!--
+         在html中用来声明表格的元素,他是一个块级元素, 
+         跟列表标签相同table内部只能包含特定的标签tr(表每一行), caption(表标题), thead(表头),  tbody(标体), tfoot(表尾),<colgroup> 与 <col> （选取1列或多列） 
+
+
+         tr 表示 table row 表格行元素,在行元素内仍然只可以存放特定元素 th / td
+        
+         th 表示 table head 表示表头单元格,存放表格标题
+         td 表示 tabke data 表示数据单元格,存放表格的数据
+
+         以上标签均有语义化,不要胡乱使用
+
+         tabel支持的属性
+            border (已舍弃)表格的边线,已经被舍弃,请使用CSS border替代
+
+            cellspacing (已舍弃)单元格外边距, 请使用CSS border-spacing 替代(margin无效)
+            cellpadding (已舍弃)单元格内部内边距, 请使用CSS padding 替代
+            width  (已舍弃) 表格的宽度,请使用CSS width 替代
+            height  (已舍弃) 表格的宽度,请使用CSS height 替代
+
+        th/td 支持的属性
+             width  (已舍弃) 表格的宽度,请使用CSS width 替代
+             height  (已舍弃) 表格的宽度,请使用CSS height 替代
+             重要 colspan 列合并,让单元格向右扩展单元格的栏位,占几列colspan值就写几
+             重要 rowspan 行合并,让单元格向下扩展单元格的栏位,占几行rowspan值就写几
+             headers 针对非可视化浏览器非常有用,用来显示单元格之间的关系
+             scope
+     -->
+     
+    <table border="1" cellspacing="5" cellpadding="5" width="80%" height="450" >
+        <caption>表格的表头 初一各班成绩表</caption>
+        <tr>
+            <th width="50" id="name">姓名</th><th id="sex">性别</th><th id="class-name">班别</th><th id="ch">语文</th><th id="math">数学</th><th id="en">英语</th><th id="total">总分</th><th id="ave">平均分</th>
+        </tr>
+        <tr>
+            <td headers="name">欧阳小慧</td><td headers="sex">男</td><td headers="class-name">B</td><td headers="ch">87</td><td headers="math">85</td><td headers="en">98</td><td headers="total"></td><td headers="ave"></td>
+        </tr>
+        <tr>
+            <td>阳丽琴</td><td>男</td><td>C</td><td>86</td><td>82</td><td>82</td><td></td><td></td>
+        </tr>
+        <tr>
+            <td colspan="3">总分</td><td></td><td></td><td></td><td colspan="2" rowspan="3"></td>
+        </tr>
+        <tr>
+            <td colspan="3">个数</td><td></td><td></td><td></td>
+        </tr>
+        <tr>
+            <td colspan="3">平均分</td><td></td><td></td><td></td>
+    </table>
+
+    <table class="new-table">
+        <tr>
+            <th>姓名</th><th>性别</th><th>班别</th><th>语文</th><th>数学</th><th>英语</th><th>总分</th><th>平均分</th>
+        </tr>
+        <tr>
+            <td>李晓阳</td><td>女</td><td>A</td><td>96</td><td>63</td><td>85</td><td></td><td></td>
+        </tr>
+        <tr>
+            <td>张阳军</td><td>女</td><td>B</td><td>45</td><td>56</td><td>58</td><td></td><td></td>
+        </tr>
+    </table>
+</body>
+</html>

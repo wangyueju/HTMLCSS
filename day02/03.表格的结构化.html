@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,
+        table td,
+        table th {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+        html提供了三个表格结构化标签
+        - thead  表头
+        - tbody  表体
+        - tfoot  表尾
+        
+        table 只能包含 tr / caption / thead /  tbody /tfoot / <colgroup> 与 <col> 
+        注意 HTML5 规定了table元素中 结构化标签的顺序,caption一定要在thead前thead 一定要在 tbody前, tbody 一定要在tfoot前,
+            <colgroup> 与 <col>  一定要在thead之前
+
+            thead / tbody / tfoot 内部可以包含任意多个tr
+     -->
+    <table>
+        <caption>材料明细表</caption>
+        <thead>
+            <tr>
+                <th rowspan="2">序号</th>
+                <th rowspan="2">图号</th>
+                <th rowspan="2">名称</th>
+                <th colspan="4">原辅材料</th>
+                <th rowspan="2">备注</th>
+            </tr>
+            <tr>
+                <th>名称</th>
+                <th>规格</th>
+                <th>单位</th>
+                <th>数量</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>NEJSSA812154-sj-!2R</td>
+                <td>拉手</td>
+                <td>冷拉圆钢</td>
+                <td>1X1.5</td>
+                <td>个</td>
+                <td>66</td>
+                <td>买最好的</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>NEJslf8ss55110-sj-87R</td>
+                <td>浴霸</td>
+                <td> </td>
+                <td>4X4</td>
+                <td>个</td>
+                <td>13</td>
+                <td>买最贵的</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>

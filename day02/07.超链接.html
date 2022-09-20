@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        target  表示如何显示指定链接资源
+            _self   当前窗口跳转至指定资源
+            _blank  创建新的窗口跳转至新的资源
+            _parent 当前面被iframe 嵌套显示时, 资源将会在上一级父页面中跳转显示,如果没有iframe嵌套,等价于 _self
+            _top    当前面被iframe 嵌套显示时, 资源将会在最上级页面中跳转显示(当前浏览器窗口中),如果没有iframe嵌套,等价于 _self
+     -->
+    <a href="http://www.bilibili.com" target="_self">B站</a>
+    <a href="mailto:help@bilibili.com">举报邮箱</a>
+    <a href="tel:">拨出电话</a>
+    <a href="bilibili://video/36695997">bilibili</a>
+    <a href="file:///D:/workspace/HTMLCSS/day02/06.%E5%9B%BE%E5%83%8F%E5%92%8C%E8%B6%85%E9%93%BE%E6%8E%A5.html">本地文件打开</a>
+    <!-- 下载文件,文件地址必须跟当前网页同源,ip与端口号都与当前网页相同 -->
+    <a href="/HTMLCSS/day01/dress.svg" media="print">图片</a>
+   
+</body>
+</html>
