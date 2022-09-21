@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 表单提交时将数据发送给那个服务器,或者是哪个服务器的那个业务模块 -->
+    <form action="https://search.bilibili.com/all" name="gec">
+        <p>
+            请输入你想看的视频名称 <input name="keyword">
+
+        </p>
+        <input type="submit">
+    </form>
+
+
+    <form action="https://www.baidu.com/s">
+        <p>
+            试试百度搜索 <input name="wd">
+
+        </p>
+        <input type="submit">
+    </form>
+
+    <form action="https://cn.bing.com/search">
+        <p>再试试必应 <input type="text" name="q"></p>
+        <input type="submit">
+    </form>
+
+    <!-- 
+        action form表单将数据提交道德目标服务器或业务模块
+
+        method
+        
+        name 表单的名字,用户在在表单中输入的值就会作为表单名字的具体内容
+        注意 form的name用处不大,主要还是用在form内部的表单元素中
+             没有name的表单元素值是无法提交给服务器的
+     -->
+
+    <form method="post" enctype="multipart/form-data" action="http://47.93.52.8:8005/users/signIn" target="_blank">
+        <h2>post 请求</h2>
+        <p>
+            <label>用户名: <input disabled type="text" name="name"></label>
+        </p>
+        <p>
+            <label>账号: <input type="text" name="account"></label>
+        </p>
+        <p>
+            <label>密码: <input type="text" name="password"></label>
+        </p>
+        <p>
+            <label>token <input disabled name="token"></label>
+        </p>
+
+        <input type="file">
+        <button>登录</button>
+
+    </form>
+
+    <!-- 
+GET与POST的区别？
+
+get是从服务器上获取数据，post是向服务器传送数据。
+
+get是把参数数据队列加到提交表单的ACTION属性所指的URL中，值和表单内各个字段一一对应，在URL中可以看到。
+post是通过HTTP post机制，将表单内各个字段与其内容放置在HTML HEADER内一起传送到ACTION属性所指的URL地址。用户看不到这个过程。
+
+* 对于get方式，服务器端用Request.QueryString获取变量的值，对于post方式，服务器端用Request.Form获取提交的数据。
+
+get传送的数据量较小，不能大于2KB。post传送的数据量较大，一般被默认为不受限制。但理论上，IIS4中最大量为80KB，IIS5中为100KB。
+
+get执行效率却比Post方法好。
+
+从隐私性来说post更优秀
+
+从服务器安全性get会更安全,get是查询操作不会修改服务器数据.get永远不会对服务器产生负作用影响.
+post请求修改服务器操作难免会有异常对服务器造成伤害
+
+ -->
+
+</body>
+
+</html>

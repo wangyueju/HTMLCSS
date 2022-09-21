@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 
+        type：       设置input元素的类型
+        autofocus：  表单元素自动获取光标
+        disabled：   禁用当前表单元素,该表单值将不会提交服务器
+        name：       所有input元素,input表单控件的名字。以名字/值对的形式随表单一起提交
+        value：      所有input元素,表单控件的值。以名字/值对的形式随表单一起提交
+        readonly：   只读当前表单元素表单value不可修改,表单值将会提交服务器
+        required：   表示表单不能为空
+        checked：    当input元素type为radio, checkbox时，用于控制控件是否被选中
+        accept：     当input元素type为file时，用于规定文件上传控件中期望的文件类型
+        formaction： 当input元素type为image, submit时，用于提交表单的URL 
+        formaction： 当input元素type为image, submit时，用于提交表单的URL
+        formenctype：当input元素type为image, submit时，表单数据集的编码方式，用于表单提交
+        formmethod： 当input元素type为image, submit时，用于表单提交的HTTP方法
+
+        formnovalidate： 当input元素type为image, submit时，提交表单时绕过对表单控件的验证
+
+        pattern：当input元素type为password, text, tel，匹配有效 value 的模式（pattern）
+
+     
+
+        max：当input元素type为number时，当前数字表单元素可以输入的最大值
+
+        min：当input元素type为number时，当前数字表单元素可以输入的最小值
+
+        step：当input元素type为number时，当前数字表单元素有效的递增值
+
+        maxlength：当input元素type为password, search, tel, text, url时，value 的最大长度（最多字符数目）
+
+        placeholder：表单占位符当input元素type为password, search, tel, text, url时，当表单控件为空时，控件中显示的内容
+        
+        multiple：当input元素type为email, file时。是否允许多个值(布尔值)
+    -->
+
+    <form id="a" enctype="application/x-www-form-urlencoded">
+        <h2>登录</h2>
+        <input type="email" name="email">
+        <p>
+            <label> 账号: <input readonly autofocus type="text" name="account" value="123123"> </label>
+        </p>
+        <p>
+            <label> 密码: <input type="password" required name="psd"> </label>
+        </p>
+        <p>
+            <label> 确认密码: <input disabled type="text" name="psd2" value="少时诵诗书"> </label>
+        </p>
+        <input type="file" cap>
+        <p>
+            hobby
+            <label>抽烟<input type="checkbox" checked></label>
+            <label>喝酒<input type="checkbox" checked></label>
+            <label>烫头<input type="checkbox"></label>
+        </p>
+        <!-- 打开摄像头拍照上传图片 -->
+        <input type="file" accept="image/*" capture="camera" />
+        <!-- or -->
+        <input type="file" accept="image/*;capture=camera" />
+
+        <input value="登录" formaction="/signin" formenctype="application/x-www-form-urlencoded" type="submit">
+        <input value="注册" formaction="/register" formenctype="multipart/form-data" type="submit">
+
+        <input type="number" max="100" min="0" step="5">
+
+        <input type="text" maxlength="13" placeholder="零食">
+    </form>
+
+    <p>
+        <label>爱好 <input dirname="" form="a" type="text" name="hobby"></label>
+    </p>
+
+    <input type="file" multiple>
+</body>
+
+</html>

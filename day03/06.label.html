@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>
+        <label >姓名: <input type="text"></label> 
+    </p>
+    <p>
+        爱好: <label>抽烟 <input type="checkbox"></label> <label>喝酒 <input type="checkbox"></label> <label>烫头 <input type="checkbox"></label>
+    </p>
+
+    <!-- 
+        label 包含表单元素,实现点击label的内容触发被包含表单元素的选中
+        
+        html5 提供了for 可以让表单元素不被包裹就能建立点击label 选中指定表单的关系
+
+        label的 for 属性与表单元素的 id 属性值相等时可建立联系
+     -->
+
+     <label for="register">快快注册吧</label>
+     <p>
+            bbbbbbbbb
+     </p>
+
+     <input type="text" id="register">
+
+     <label>
+        + 上传身份证正面
+        <input type="file"  accept="image/*">
+     </label>
+
+    <!-- 多行文本输入框， 他没有value属性 -->
+     <textarea> 水水水水水水</textarea>
+
+
+     <select >
+        <option disabled>北京</option>
+        <option>上海</option>
+        <option>杭州</option>
+        <option>深圳</option>
+     </select>
+     
+</body>
+</html>

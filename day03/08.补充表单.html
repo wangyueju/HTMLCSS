@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        label 可以和 textarea 配合使用提高用户体验 
+
+        cols="10" rows="3"属性可以精确的控制文本输入框的尺寸,因为浏览器的元素.不同的浏览器默认默认行列尺寸不同,所以在开发中推荐一定要去写保证所有浏览器ui一致
+        (cols 可能并不是特别精确展示10列, rows是很准确)
+
+        多行文本输入框输入的文本内容在对称性标签内部而不value属性中(textarea没有value属性)
+
+        textarea支持的属性
+        - name 表单提交的key
+        - autofocus 自动获取光标
+        - disabled  禁用
+        - form  属性值与页面中设置id的<form>表单元素的id值相等时,可以绑定到一起,在表单元素提交时此多行文本输入框的内容也会一并被提交
+        - placeholder 占位符 
+        - readonly  只读
+        - required  不能为空
+        - cols  列数 -> 影响宽度
+        - rows  行数 -> 影响高度
+        - maxlength  文本最大长度
+        - minlength  文本最短长度
+        - wrap 换行(了解不用,真正实现换行的UI效果一般使用css样式) 
+            - hard  文本达到元素最大时,浏览器自动插入换行符
+            - soft(默认值) 不插入换行符
+    -->
+    <form action="" id="a">
+        <input type="submit">
+    </form>
+
+    <input type="text" value="123" name="" id="">
+
+    <label for="comment">请提出你的宝贵建议</label>
+    <textarea form="a" name="text" id="comment" cols="10" wrap="hard" rows="2" >1234 567890abcde</textarea>
+
+    <!-- 
+        select下拉列表选择表单,支持的属性
+         - name 表单提交key
+         - autofocus 自动获取光标
+         - disable 禁用
+         - form  属性值与页面中设置id的<form>表单元素的id值相等时,可以绑定到一起,在表单元素提交时此下拉列表框的内容也会一并被提交  
+         - multiple 复选
+         - require 必选
+         - size 列表框尺寸,下拉列表如果是滑动列表框(设置了multiple属性),改属性表示滑动框的可见行数. 默认值是0有系统自己判断展示可见行数
+            
+        option支持的属性
+         - disable 禁用某个选项
+         - value   表单提交时value值,省略该属性时,该属性的值为对称性标签内的文本内容
+         - selected 表示选择框当前选项被选中,如果没有设置 multiple 属性该选择框只能有一个option设置此属性
+         - label 表示是当前option的文本,省略该属性,会用对称性标签的文本内容值作为该属性的值
+
+     -->
+
+    <select multiple size="0"  autofocus  name="" id="">
+        <option value="">1</option>
+        <option selected value="">2</option>
+        <option selected value="">3</option>
+        <option value="">4</option>
+        <option >5</option>
+    </select>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 一个页面只允许有至多一个基准参考点,只能到端口号不支持下一级路径 -->
+    <base href="http://127.0.0.1:3000" target="_blank">
+    <link href="/demo01/images/1.webp">
+    
+</head>
+<body>
+    <!-- 相对路径 
+        ./ 表示当前目录
+        ../表示上一级目录
+        / 根目录,默认情况下根目录是当前服务器地址,如果页面设置了base基准点标签.根目录将会指向base标签的src属性
+
+        base基准点不仅仅影响a标签,他影响所有使用 / 根目录的属性
+
+     -->
+    <a href="/documentary" target="_self">纪录片</a>
+    <a href="/movie">电影</a>
+    <a href="/tv">电视剧</a>
+    <img src="/demo01/images/1.webp">
+
+    
+</body>
+</html>

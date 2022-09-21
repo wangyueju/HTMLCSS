@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <h2>粤嵌学习平台调查表</h2>
+        <p> 感谢您抽出时间帮助我们改进平台</p>
+    </header>
+
+    <main>
+        <form>
+            <div>
+                <!-- 文本输入框的value属性值就是向输入框内部输入的文字内容 -->
+                <label>Name: <input type="text" name="name" placeholder="请输入你的姓名"></label>
+            </div>
+            <div>
+                <label>Email: <input type="email" name="email" placeholder="请输入你的邮箱"></label>
+            </div>
+            <div>
+                <label>Age(请选择): <input type="number" name="age" min="10" max="99" placeholder="年龄"></label>
+            </div>
+            <div>
+                <label>请问你的职业是?
+                    <!-- select option拥有setected属性表示，select下拉选择列表默认选中的option -->
+                    <select name="job" required>
+                        <!-- 
+                            select option如果不设置value，他的value值将会是对称型标签内部的文本
+                            如果设置value值，表单提交时提交的value属性的值
+                            在disable选项中设置value为空配合required属性可以实现,表单验证时用户必须选择下方的选项
+                            如果不设置value为空,当前select的value就是disable option的文本内容(不为空) required属性将会失效,无法实现必须进行选择功能
+                         -->
+                        <option selected disabled value="">请选择你的职业</option>
+                        <option >学生</option>
+                        <option   value="teacher">老师</option>
+                        <option >其他</option>
+                    </select>
+            </div>
+
+            <div>
+                <p>你会向朋友推荐粤嵌学习平台吗？</p>
+                <label><input name="user-recommend" type="radio" value="0">会</label>
+                <label><input name="user-recommend" type="radio" value="1">可能会</label>
+                <label><input name="user-recommend" type="radio" value="3">不会</label>
+            </div>
+
+            <div>
+                <label>你最喜欢粤嵌学习平台的功能是什么? <br>
+                    <select name="mostLike" required>
+                        <option selected disabled value="">请选择</option>
+                        <option>课程</option>
+                        <option>作业</option>
+                        <option>实验</option>
+                        <option>项目</option>
+                        <option>其他</option>
+                    </select>
+            </div>
+            <div>
+                你希望看到什么改进?(可以全选) <br>
+                <label>
+                    <input type="checkbox" value="1" name="projects[]">前端项目
+                </label>
+                <label>
+                    <input type="checkbox" value="2" name="projects[]">后端项目
+                </label>
+                <label>
+                    <input type="checkbox" value="3" name="projects[]">数据可视化
+                </label>
+                <label>
+                    <input type="checkbox" value="4" name="projects[]">课程
+                </label>
+                <label>
+                    <input type="checkbox" value="5" name="projects[]">班级学习氛围
+                </label>
+                <label>
+                    <input type="checkbox" value="6" name="projects[]">答疑
+                </label>
+                <label>
+                    <input type="checkbox" value="7" name="projects[]">视频
+                </label>
+                <label>
+                    <input type="checkbox" value="8" name="projects[]">附加课程
+                </label>
+            </div>
+            <div>
+                有什么意见或建议吗? <br>
+                <textarea name="commet" placeholder=" Enter your comment here..."></textarea>
+            </div>
+            <input type="image" src="./submit.jpg" alt="submit">
+
+            <br>
+
+            <input type="submit">
+        </form>
+    </main>
+</body>
+
+</html>
