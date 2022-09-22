@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 
+        伪类: 就是用来匹配页面中元素处于某种特殊状态时选择器. 伪类支持派生用法. 伪类的语法 :特殊状态 列 :hover
+         */
+
+    /* :link     超链接还未被访问的状态
+            :visited  超链接已经被被访问过的状态
+            :hover    鼠标悬停到目标元素的状态 适用于所有元素
+            :active   元素被选定的状态 适用于所有元素
+            
+            以上四个伪类应用在同一个元素上时,伪类的声明顺序是有要求的
+
+            hover 必须在 link visited后
+            active 一定要hover后面
+
+            口诀 爱恨原则 LoVe HAte 记住以上四个伪类声明顺序
+          */
+
+    a:link {
+      color: red;
+    }
+
+
+    a:visited {
+      color: orange;
+    }
+
+
+    a:hover {
+      color: blue;
+    }
+
+
+    a:active {
+      color: black;
+    }
+
+
+
+    p:hover {
+      color: red;
+    }
+
+
+    p:active {
+      background: green;
+      color: orange;
+    }
+
+     /* 
+            结构伪类
+            :nth-child(n)  当前选择器第n个子元素
+                :nth-child(2) 第二个子元素
+                p:nth-child(3) 第三个子元素并且该元素必须为p元素
+
+            n 支持三种写法
+            1. 直接写一个数字明确指定第几个
+            2. even 或 odd 分别表示 偶数 和 奇数
+            3. an+b a和b是常数 ,n从0开始依次加一
+                2n   所有偶数
+                2n+1 所有奇数
+                3n+1 1 4 7 10
+                -n+3 3 2 1
+                -2n+6 6 4 2
+          */
+    .box :nth-child(-n+3) {
+      color: red;
+      font-weight: 600;
+    }
+
+    /* 
+    nth-of-type(n) 选择器用于匹配当前父元素内部第n指定类型的子元素 
+                :nth-of-type(2) 同一个父元素中,所有相同标签中第二个元素
+                p:nth-of-type(3) 同一个父元素中的第三个p元素
+
+      n 支持三种写法
+            1. 直接写一个数字明确指定第几个
+            2. even 或 odd 分别表示 偶数 和 奇数
+            3. an+b a和b是常数 ,n从0开始依次加一
+                2n   所有偶数
+                2n+1 所有奇数
+                3n+1 1 4 7 10
+                -n+3 3 2 1
+                -2n+6 6 4 2
+    
+    */
+
+    .test :nth-of-type(2) {
+      /* .box 元素中的第一个div元素 */
+      color: green;
+    }
+
+    .test h3:nth-of-type(1) {
+      color: blue;
+    }
+
+    .test h3:nth-child(3) {
+      background-color: gray;
+    }
+
+    .test :nth-child(6) {
+      color: red;
+    }
+
+    .test h3:last-of-type {
+      background-color: pink;
+    }
+
+
+
+    /* 
+    结构伪类
+    
+    :first-child伪类 等价于 :nth-child(1)
+
+    :last-child伪类 最后一个子元素 :nth-last-child(1) 
+
+    :first-of-type伪类 等价于 :nth-of-type(1)  匹配页面中同一个父元素下指定类型的首个元素
+
+    :last-of-type伪类 等价于  匹配页面中同一个父元素下指定类型的最后一个元素
+
+    :only-child 表示父元素唯一子元素
+
+    :only-of-type 表示父元素中指定类型的唯一元素
+
+    :nth-last-child(n) 跟:nth-child(n)相反,表示查询同一个父元素下倒数第n个子元素
+
+    :nth-last-of-type(n) 跟 :nth-of-type(n)相反, 表示同一个父元素下倒数第n个指定类型的元素
+    
+    */
+
+
+      /* 元素的第一个文本字符  */
+    /* p::first-letter {
+      color: blue;
+    } */
+
+    :only-child {
+      border: 1px solid black;
+    }
+
+
+    :only-of-type {
+      border: 2px solid red;
+    }
+
+
+  </style>
+</head>
+
+<body>
+  <!-- 
+  <a href="http://www.yahoo.com">雅虎</a> <br>
+  <a href="http://www.bilibili.com">B站</a>
+
+  <p>a</p>
+
+
+  <div class="box">
+    <p>10少时诵诗书</p>
+    <div>2</div>
+    <p>3</p>
+    <p>4</p>
+    <p>5</p>
+    <p>6</p>
+    <p>7</p>
+    <p>8</p>
+    <p>9</p>
+    <p>10</p>
+  </div>
+   -->
+
+
+
+  <div class="test">
+    <p>p1
+      <span>11</span>
+    </p>
+    <p>p2</p>
+    <h3>h3-1</h3>
+    <p>p3</p>
+    <h3>h3-2</h3>
+    <h1>h1-1</h1>
+    <h3>h3-3</h3>
+    <p>p4</p>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url(./other2.css);
+
+        /* css的注释语法为斜杠星号,注释与注释符号之间用一个空格隔开 */
+        a {
+            color: bisque;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        div {
+            display: block;
+        }
+
+        /* 
+            css 语法,除了内联样式表以外.其他几种样式表都是用 选择器,样式属性名,样式属性值指定页面元素的样式
+
+            选择器 {
+                样式属性名1: 样式属性值1;
+                样式属性名2: 样式属性值2;
+                样式属性名3: 样式属性值3;
+            }
+
+            注意，在使用CSS是我们对语法格式进行了一定的约束：
+
+            1. 在每个元素的样式声明区域里，左右花括号{和 }一定要写全。你需要确保所有样式规则位于花括号之间。
+            2. 在规则声明的左大括号 { 前加上一个空格。(选择器与左边大括号之间有一个空格)
+            3. 规则声明的右大括号 } 独占一行。
+            4. 每条样式规则都以分号结束，并且独占一行。
+            5. 每条样式规则属性的冒号:后面加上一个空格，前面不加空格。(冒号与属性值之间必须要有空格)
+            6. 使用 2 / 4 个空格作为缩进。
+            7. 每个声明规则都使用空行隔开。
+
+         */
+    </style>
+    <!-- link要写在head标签中,一定要设置 rel属性表示引入的文件在当前html文档中的关系(作用) herf引入文件的资源路径地址  -->
+    <link rel="stylesheet" href="./box.css">
+</head>
+
+<body>
+    <!-- 
+        CSS 全称 层叠式样式表 cascading style sheets, 负责美化网页
+            - 颜色 color
+            - 背景 background
+            - 字体 font
+            - 浮动 float
+            - 位置 position
+            - 显示 display
+            - 边框 border
+            - 内边距 padding
+            - 外边距 margin
+            - 行高 line-height
+            - 装饰 text-decoration
+            - 过渡 transtion
+            - 变化 transform
+            - 动画 animation
+     -->
+    <!-- 
+        CSS 的引入方式
+        1. 内联式,对可视元素设置通用属性style在属性中以 样式名:样式值;语法结构单独的给某一个元素设置样式 (这种方式用的比较少)
+            <p style="color: red;">hello</p>
+        2. 嵌入式, 将css语法通过style嵌入到html中
+            <style>
+                a {
+                    color: bisque;
+                    text-decoration: none;
+                    }
+            </style>
+        3. 外部样式,将css代码写到以.css为后缀名的文件中,在html页面中通过link标签引入,W3C推荐此种引入方法,该模式利于维护和复用    
+            <link rel="stylesheet" href="./box.css">
+            注意:link要写在head标签中,一定要设置 rel属性表示引入的文件在当前html文档中的关系(作用) herf引入文件的资源路径地址  
+        
+        4. 输入样式表(产品模式不常用) ,在一个css文件中使用 @import引入另一个css文件.这种引入方式会阻塞线程
+            在某个css文件或style标签中
+            @import url(./other.css);引入另一个css文件
+
+        面试题 link与@import区别
+            1. link引用CSS时，在页面载入时同时加载；@import需要页面网页完全载入以后加载。
+        
+            2. link无兼容问题。@import是css2.1提出的，低版本浏览器不支持ie 5以下
+
+            3. @import是CSS提供的，只能用于加载CSS,link可以加载其他文件
+      -->
+    <p style="color: red;background-color: aqua;">hello</p>
+    <a href="#">超链接</a>
+    <div class="box"></div>
+
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+</body>
+
+</html>

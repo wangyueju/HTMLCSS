@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 属性选择器可以配合上下文关系实现派生使用 */
+
+        /* [属性] 查询包含此属性的html元素 重点 */
+        p [type] {
+            outline: 2px solid red;
+        }
+
+        /* [属性=属性值] 查询设置了包含了此属性并且属性值与选择器设置相同的元素 重点 */
+        input[type=password] {
+            outline: 1px solid blue;
+        }
+
+        /* |= 表示以该单词开头,并且该单词是完整单词 name="user" name="user-word"会被选中 了解 */
+        [name|=user] {
+            background-color: aqua;
+        }
+
+        /* ~= 表示属性必须包含user完整单词,可以是name="user" 也可以是name="user otherword" 了解*/
+        [name~=user] {
+            background-color: aqua;
+        }
+
+        /* css3 属性选择器, name属性值以nick开头的元素 重点  */
+        [name^=nick] {
+            background-color: red;
+        }
+
+
+        /* css3 属性选择器, name属性值以me结尾的元素 重点  */
+        [name$=me] {
+            background-color: green;
+        }
+
+         /* css3 属性选择器, name属性值包含ni单词的元素  重点 */
+         [name*=ni] {
+            background-color: pink;
+        }
+
+
+
+    </style>
+</head>
+
+<body>
+    <p>
+        <input type="text"> <br>
+        <input> <br>
+        <input type="password">
+        <input type="text" name="user-name">
+        <input type="text" name="nick-name">
+        <input type="text" name="user name">
+        <input type="text" name="nickname">
+    </p>
+</body>
+
+</html>

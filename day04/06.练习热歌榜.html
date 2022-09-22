@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        section div:hover {
+            color: red;
+        }
+
+        /* section div:nth-child(n+5)::first-letter {
+            color: gray;
+        } */
+
+        section div:nth-of-type(1)::first-letter {
+            color: gold;
+        }
+
+        section div:nth-of-type(2)::first-letter {
+            color: rgb(160, 38, 38);
+        }
+
+        section div:nth-of-type(3)::first-letter {
+            color: rgb(119, 45, 45);
+        }
+
+        section div::first-letter {
+            color: gray;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <h2>云音乐热歌榜</h2>
+        <div>1 会不会</div>
+        <div>2 我很好</div>
+        <div>3 执迷不悟</div>
+        <div>4 海底</div>
+        <div>5 他只是经过</div>
+        <div>6 经济舱(Live)</div>
+        <div>7 如果当时2020</div>
+        <div>8 是想你的声音啊</div>
+        <div>9 天外来物</div>
+    </section>
+</body>
+
+</html>

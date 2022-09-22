@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./reset.css">
+    <style>
+        /* 选择器就是在css中负责获取页面DOM元素的一个声明 */
+        /* 通配符选择器，*号在css选择器中表示匹配所有HTML元素,尽量避免使用该选择器,该选择会逐个查询文档中所有元素从而影响浏览器的性能 */
+
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        /* css 中可以使用html元素的标签名作为选择器,这种选择器被称为html选择器,表示查询文档中对应html元素 */
+
+        p {
+            margin: 0;
+            background-color: aqua;
+
+        }
+
+        /* 
+            类class选择器, 页面中可以设置样式的元素(有属性单一型或有属性对称型元素)都有一个通用属性class, css支持使用类选择器(语法: .class名)匹配与文档中class属性相同的元素
+
+            注意:在前端开发中类选择器是css样式最常用的选择器
+         */
+        .test {
+            border: 1px solid red;
+        }
+
+        .box {
+            margin-top: 5px;
+            background: #eee;
+            width: 80px;
+        }
+
+        /*
+            id选择器, 与类选择器相似HTML中所有(有属性单一型或有属性对称型元素)都有一个通盈属性id, css可以通过(语法: #id值)写法获取页面中指定id的元素
+
+            注意:元素的id值就跟生活中的身份证一样.每个元素的id值必须在整个页面中唯一.
+                 避免使用id选择器去获取元素设置样式,浏览器使用id选择器匹配元素比较慢影响页面的性能    
+         */
+        #baidu {
+            color: red;
+        }
+
+        /* 注意: 在开发中 id 和 class值都请使用小写,多个单词用横杠-符号拼接 */
+
+        /* 派生选择器  通过使用"html选择器 class 选择器 id选择器(不推荐)"根据元素的位置上下文关系查询页面中的指定元素,该选择器可以使得页面中的html元素更加简介 */
+
+        /* 
+            选择器用空格隔开表示后代派生选择器, 前者选择器包含后者选择器
+            下面例子表示的是所有被class名为test元素所包含的strong元素 
+         */
+        .test strong {
+            color: darkgreen;
+        }
+
+        .test .my-blog {
+            background-color: #fff;
+        }
+
+        .tabbar .tabbar-item {
+            background-color: #eee;
+            color: gray;
+        }
+
+        /* 
+         多个选择器连在一起没有空格或其他符号隔开,并且派生选择器.
+             获取页面中同时满足以上所有拼接在一起的选择器要求的元素
+          */
+        .tabbar .tabbar-item.active {
+            color: rgb(15, 202, 15);
+        }
+
+        /* 子元素选择器, 选择器1 > 选择器2 表示 获取选择器2且选择器2是选择器1的直接子元素  */
+        p>strong {
+            background-color: blue;
+        }
+
+
+        .lyric p {
+            color: rgba(147, 147, 147, 0.5);
+        }
+
+        /*
+         组合选择器,多个选择器共用同一套样式可以使用组合选择器, 不同的选择器之间用,号隔开 
+         大厂代码规范每一个用逗号隔开的选择器,在逗号除需要换行
+        */
+        .lyric .active,
+        h2.title {
+            color: rgba(147, 147, 147, 1);
+            font-weight: 600;
+        }
+
+        /* 相邻兄弟选择器,  选择器1 + 选择器2, 选择与选择器1有相同父元素并且紧挨着的下一个兄弟元素 */
+        .lyric .active+p {
+            color: rgba(147, 147, 147, 0.8);
+        }
+
+        /* HTML5 兄弟选择器, 匹配当前元素拥有相同父元素,并且在当前元素之后的所有兄弟元素 */
+
+        .lyric .active~p {
+            color: red;
+        }
+
+        /* 组合选择器 */
+    </style>
+</head>
+
+<body>
+    <!-- 
+    <p  class="test">你好</p>
+    <div class="box">我是box1</div>
+    <div class="box">我是box2</div>
+    <a id="baidu" href="http://www.baidu.com">百度</a>
+    <p class="test">
+        <strong>你好</strong>  欢迎访问
+        <a  class="my-blog" href="http://bilibili.com">
+            <strong>我的</strong>博客
+        </a>
+    </p>
+
+    <div class="tabbar">
+        <span class="tabbar-item active">微信</span>
+        <span class="tabbar-item">通讯录</span>
+        <span class="tabbar-item active">发现</span>
+        <span class="tabbar-item">我</span>
+    </div>
+     -->
+
+
+    <div class="lyric">
+        <p>歌词1</p>
+        <p>歌词2</p>
+        <p class="active">歌词3</p>
+        <div>歌词4</div>
+        <p>歌词5</p>
+        <p>歌词6</p>
+    </div>
+
+
+
+    <h2 class="title">标题</h2>
+
+</body>
+
+</html>

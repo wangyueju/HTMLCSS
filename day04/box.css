@@ -1,0 +1,8 @@
+@import url(./other.css);
+
+.box {
+    display: block;
+    width: 100px;
+    height: 100px;
+    background-color: aqua;
+}

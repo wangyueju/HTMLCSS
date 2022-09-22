@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            开发中后代派生选择器的层级最好不要超过三级
+        */
+
+        * {
+            /* color: pink; */
+        }
+
+        .main .type-nav>li {
+            color: red;
+        }
+
+        /* .type-nav ul>li {
+            color: green;
+        } */
+
+        .main article {
+            background-color: gray;
+        }
+
+        .main .top-arcticle h2 {
+            color: red;
+        }
+
+        .main .top-arcticle~article h2 {
+            color: #eee;
+        }
+
+        .main .top-arcticle+article h2 {
+            color: rgb(216, 83, 83);
+        }
+
+        .main .label {
+            color: orange;
+        }
+        
+
+        #a {
+            color: orange!important;
+        }
+
+        /* 优先级 
+        越精确的选择器优先级越高
+
+        !important > 内联 > id > 类选择器 > 元素选择器 > 通配符选择器 > 继承的样式
+       
+
+        派生选择器需要具体情况具体分析, 谁更精确谁的优先级更高
+
+        优先级相同的选择器后者覆盖前者
+        */
+
+    </style>
+</head>
+
+<body>
+    <!-- 
+        一级列表 字体红色
+        二级列表 字体绿色
+
+        新闻第一个新闻标题是红色  新闻模块背景灰色
+        新闻第二个新闻标题是浅红色 新闻模块背景灰色
+        新闻第二个新闻标题是黑色 新闻模块背景灰色
+        独家字体颜色 橘红色
+     -->
+
+    <div class="main">
+        <ul class="type-nav">
+            <li>要闻</li>
+            <li>广州</li>
+            <li>国内</li>
+            <li>国际</li>
+            <li>独家</li>
+            <li>军事
+                <ul>
+                    <li id="a" style="color: red;">航空/航天</li>
+                    <li>卫星</li>
+                    <li>东风快递</li>
+                    <li>航母</li>
+                </ul>
+            </li>
+        </ul>
+        <section>
+            <article class="top-arcticle">
+                <h2>谁杀死了评价雪糕</h2>
+                <p>小心雪糕刺客</p>
+                <p class="label">独家</p>
+            </article>
+            <article>
+                <h2>明星搞餐饮,疯狂割韭菜</h2>
+                <p>陈赫,还我血汗钱</p>
+                <p class="label">独家</p>
+            </article>
+            <article>
+                <h2>中国避暑城市排行,谁是第一</h2>
+                <p>谁是第一不重要,真避暑还要看我湛江</p>
+                <p class="label">独家</p>
+            </article>
+            <article>
+                <h2>美国在叙利亚再次发射忍者导弹</h2>
+                <p>中方表示强烈谴责</p>
+                <p class="label">军事</p>
+            </article>
+            <article>
+                <h2>谨防烂尾楼停供风险扩散</h2>
+                <p>退钱!</p>
+                <p class="label">财经</p>
+            </article>
+        </section>
+    </div>
+
+</body>
+
+</html>
