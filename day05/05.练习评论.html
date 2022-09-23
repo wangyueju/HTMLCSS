@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./reset.css">
+    <style>
+        main {
+            padding: 10px 40px;
+            width: 560px;
+        }
+
+        .title {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 8px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .rating-box {
+            margin-top: 15px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+            background-color: red;
+            /* 撑开父容器, 子元素浮动,无法撑开父元素的 */
+            overflow: hidden;
+        }
+
+        .rating-box .avatar {
+            /* display: inline-block; */
+            float: left;
+            margin-right: 8px;
+        }
+
+        .rating-box .rating-wrapper {
+            /* display: inline-block; */
+            width: 495px;
+            float: left;
+            font-size: 12px;
+            
+        }
+
+        .rating-box .rating-wrapper .rating-date {
+            margin-top: 20px;
+        }
+
+        .rating-box .rating-wrapper .user-name {
+            color: rgb(0, 162, 255);
+            margin-right: 5px;
+        }
+
+        .rating-box .rating-wrapper img {
+            margin-right: 8px;
+            width: 35px;
+            height: 12px;
+            color: rgb(0, 162, 255);
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <h2 class="title">精彩评论</h2>
+        <article class="rating-box">
+            <div class="avatar">
+                <img src="./1.jpg" alt="用户头像">
+            </div>
+            <div class="rating-wrapper">
+                <p class="rating-content">
+                    <span class="user-name">二次光年</span><img src="./vip.png" alt="vip4">：其实制作一个歌单，选两百多首歌，并不像别人毫不费力地发一句刻薄的评论这么简单。这是别人的歌单，想听便听，不想听就过，没有必要非要说那些难听的话，说一句别人的歌单真是狗屁就是不是让你感觉自我良好了？品味有多高了？基本的尊重都没有啊。
+                </p>
+                <p class="rating-date">2019年6月16日</p>
+            </div>
+        </article>
+
+    </main>
+
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./color.css">
+
+    <style>
+        /* :focus 表单元素获取光标时,a链接被点击时也会出发 */
+        input:focus {
+            background-color: aqua;
+        }
+
+        /*
+        :root 表示html元素根元素,我们在现在的开发中使用该伪类选择器设置全局变量
+            变量名必须以--开头,b站推荐每个单词使用下划线拼接
+        :root {
+            --theme_blue: #00AEEC;
+            --text1: #18191C;
+            --text2: #9499A0;
+        }
+
+        要是用全局变量颜色需要使用var()函数, 语法 样式名:var(变量名) 
+        */
+        
+        p {
+            color: var(--text1);
+        }
+
+        p:hover {
+            color: var(--theme_blue);
+        }
+
+
+        /* 表示没有子元素且不包含任何文本内容的元素,单一型元素永远符合该条件 */
+        :empty {
+            border: 1px solid #fC0;
+        }
+
+        /* 表示未禁用的表单元素 */
+        :enabled {
+            padding: 10px;
+        }
+        /* 表示禁用的表单元素 */
+        :disabled {
+            padding: 5px;
+            border: 2px solid red;
+        }
+        /* 单复选框被勾选状态 */
+        :checked {
+            width: 25px;
+            height: 25px;
+        }
+
+        /* 反选 not(css选择器) */
+        /* :not(:empty) {
+            border: 2px solid #000;
+        } */
+
+        /* :target 被激活的锚点元素a对应的设置id的元素 */
+
+        :target {
+            background-color: #fC0;
+        }
+    </style>
+</head>
+<body>
+    <input disabled type="text">
+
+    <input type="checkbox">
+    <p>hello</p>
+
+
+    <a href="#推荐">推荐</a> <br>
+    <a href="#生活">生活</a>
+
+
+    <h2 id="推荐">推荐</h2>
+    <h2 id="生活">生活</h2>
+</body>
+</html>

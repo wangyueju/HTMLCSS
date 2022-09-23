@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./reset.css">
+    <style>
+        /* 
+
+
+        在开发中每一个都是一个盒子,盒子模型由四个部分组成
+        1. 外边距 margin
+        2. 边框 border
+        3. 内边距 padding
+        4. 内容 content
+
+
+        content 当前元素真实内容区域,默认情况下CSS属性width和height属性都是用来设置该区域的
+        
+        默认情况下元素的真实宽高是 width + 左右边框宽度 + 左右padding宽度
+                       真实宽高是 height + 上下边框宽度 + 上下padding宽度
+
+
+        margin 元素的外边距是,margin-top \ margin-right \ margin-bottom \ margin-left 的简写形式, margin属性有四种赋值格式
+            1. margin: 5px;               表示元素上右下左四个方位的外边距都是5px
+            2. margin: 5px 6px;           表示元素上下外边距5px 左右外边距6px
+            3. margin: 1px 5px 2px;       表示元素上外边距1px 左右外边距5px 下外边距2px
+            4. margin: 1px 2px 3px 4px;   表示元素上外边距1px 右外边距2px 下外边距3px 左外边距4px (顺时针)
+            
+            注意: margin可以实现块级元素水平居中,原理让块级元素水平方向的外边距值为auto
+
+        padding 元素的内边距,用来撑开元素用于让内容不要紧贴着元素的边界.他也是padding-top \ padding-right \ padding-bottom \ padding-left 的简写形式
+            1. padding: 5px;               表示元素上右下左四个方位的内边距都是5px
+            2. padding: 5px 6px;           表示元素上下内边距5px 左右内边距6px
+            3. padding: 1px 5px 2px;       表示元素上内边距1px 左右内边距5px 下内边距2px
+            4. padding: 1px 2px 3px 4px;   表示元素上内边距1px 右内边距2px 下内边距3px 左内边距4px (顺时针)
+
+
+        border 元素的边框,他是 border-width (边框宽度) \  border-style(边框线的样式) 可选值有 solid(实线最常用, 其他类型几乎用不到) double(双实线) dotted(点虚线) dashed(线段虚线) \ border-color (边框线的颜色)
+            
+            border-width 又是   border-top-width \ border-right-width \ border-bottom-width\ border-left-width 的简写
+            border-style 又是 border-top-style \ border-right-style \ border-bottom-style\ border-left-style 的简写
+            border-color 又是 border-top-color \ border-right-color \ border-bottom-color\ border-left-color 的简写
+
+            none属性值表示不显示边框,css大厂规定 使用 0 代替 none 表示对应的border不显示
+        */
+
+        div {
+            /* 
+                在开发中 有一种异常盒子模型 
+                box-sizing指定盒子模型 默认值content-box,在这种盒子模型中,width和height指的是盒子content区域的宽高
+                                     border-box 这种异常盒子模型中width和height指的是 content + padding + border的总宽高.这种异常盒模型在开发中非常常用
+
+            */
+            /* box-sizing: border-box; */
+
+            /* border: 1px solid #eee; */
+
+            /* border-width: 2px; */
+            /* border-top-width: 2px;
+            border-right-width: 3px;
+            border-bottom-width: 4px;
+            border-left-width: 5px;
+            border-style: dashed;
+            border-left-style: double;
+            border-color: red;
+            border-left-color: green;
+
+            
+            margin: 10px auto;
+           
+            
+            padding: 20px 19px;
+            width: 230px;
+            height: 120px; */
+        }
+
+        .tall {
+            box-sizing: border-box;
+            width: 0;
+            height: 0;
+            border-left: 0; /* 在CSS规范中我们约定使用0替代none关键字 */
+            border-right: 10px solid #00aaee;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+        }
+
+        span {
+            /* 行内元素默认都是宽度 高度 无效的 */
+            /* 设置 display: inline-block; 表示此元素是一个行内块元素,宽高就有效了 */
+            display: inline-block;
+            background-color: red;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>hello world</div> 
+    <span>213</span>
+
+    <div class="tall"></div>
+</body>
+
+</html>

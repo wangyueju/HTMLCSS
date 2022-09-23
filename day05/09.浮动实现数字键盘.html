@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .demo {
+            box-sizing: border-box;
+            padding: 5px 5px 0;
+            width: 265px;
+            background-color: rgb(199, 195, 195);
+            overflow: hidden;
+        }
+
+        .demo div {
+            float: left;
+            margin-right: 5px;
+            margin-bottom: 5px;
+            border-radius: 8px;
+            width: 60px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            background-color: #fff;
+        }
+
+        .demo div:nth-child(4),
+        .demo div:nth-child(11) {
+            float: right;
+            margin-right: 0;
+            height: 85px;
+            line-height: 85px;
+        }
+
+        .demo div:nth-child(11) {
+            background-color: rgb(0, 110, 255);
+            color: #fff;
+        }
+
+        .demo div:nth-child(12) {
+            width: 125px;
+        }
+    </style>
+</head>
+<body>
+    <div class="demo">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>删除</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div>完成</div>
+        <div>0</div>
+        <div>.</div>
+    </div>
+
+</body>
+</html>

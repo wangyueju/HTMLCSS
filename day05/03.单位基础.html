@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            %   相对于父元素尺寸的百分比值 
+            px  像素(相对单位)
+            em  当前元素的字号大小就是1em支持浮点数(基本不使用)
+            rem html元素的字体大小(这个在做响应式布局时非常常用,但是CSS3标准里推荐使用新尺寸单位vw vh替代rem)
+            vw  100vw等于屏幕视口的宽度
+            vh  100vh等于屏幕视口的高度
+        */
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            font-size: 20px;
+        }
+
+        .box {
+            font-size: 12px;
+            width: 10vw;
+            height: 400px;
+            background-color: #eee;
+        }
+        /* 
+            颜色
+            1. 颜色的英文单词
+            2. rgb / rgba : rgb分别对应光学三原色红绿蓝,取值范围在0~255之间, a对应的是透明度取值范围0-1之间的浮点数
+            3. #FFFFFF rgb的十六进制写法,取值范围十六进制的00-ff之间(十进制 0 到 255)之间,每两位表示一种光学三原色
+               支持简写 #ffffff -> #fff  #ffaa00 -> #fa0  #aacc60 无法简写
+            4. hsl 工业颜色标准(了解) h表示色调(0-360)之间, s饱和度(0% ~100%), l颜色的亮度(0%-100%)
+            5. hsla 与上面hsl相同加了0-1之间透明度
+
+        */
+        .small-box {
+            position: absolute;
+            top: 0;
+            width: 50%;
+            height: 10vh;
+            /* background-color: rgba(100, 0, 255,0); */
+            background-color: hsla(35, 40%, 80%,0.5);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        你好
+        <div class="small-box"></div>
+    </div>
+</body>
+
+</html>

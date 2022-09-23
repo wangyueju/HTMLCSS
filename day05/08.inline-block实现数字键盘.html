@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .demo {
+            box-sizing: border-box;
+            margin: 20px auto;
+            padding: 5px 5px 0;
+            background-color: rgb(202, 199, 199);
+            width: 265px;
+            font-size: 0;
+        }
+        .demo .number-keys {
+            display: inline-block;
+            
+            width: 195px;
+            /* background-color: aqua; */
+        }
+
+        .demo .control-keys {
+            vertical-align: top;
+            display: inline-block;
+            width: 60px;
+            /* background-color: blueviolet; */
+        }
+
+        .number-keys div,
+        .delete,
+        .complete {
+            display: inline-block;
+            border-radius: 8px;
+            background-color: #fff;
+            width: 60px;
+            font-size: 24px;
+            height: 40px;
+            text-align: center;
+        }
+
+
+        .number-keys div {
+            margin-bottom: 5px;
+            margin-right: 5px;
+        }
+
+        .number-keys div:nth-child(10) {
+            width: 125px;
+        }
+
+        .delete,
+        .complete {
+            line-height: 85px;
+            height: 85px;
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .complete {
+            background-color: rgb(0, 110, 255);
+            color: #fff;
+        }
+
+        .delete img{
+            width: 36px;
+        }
+
+    </style>
+</head>
+
+<body>
+<div class="demo">
+    <div class="number-keys">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div>0</div>
+        <div>.</div>
+    </div>
+    <div class="control-keys">
+        <div class="delete">
+            <img src="./delete.png" alt="删除">
+        </div>
+        <div class="complete">
+            完成
+        </div>
+    </div>
+</div>
+</body>
+
+</html>

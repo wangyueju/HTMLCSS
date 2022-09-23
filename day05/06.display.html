@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            display: block;
+            background-color: red;
+        }
+
+        .ab {
+            /* span元素默认display就是inline */
+            margin-top: 100px; /*inline上下无效*/
+            margin-left: 15px; 
+            /* 注意:对于行内元素来说，尽管内容周围存在内边距与边框，但其占用空间（每一行文字的高度）则由 line-height 航哥属性决定，即使边框和内边距仍会显示在内容周围,但是不会撑开元素的高度,导致元素有一种覆盖周围元素的效果。 */
+            padding: 5px;
+            background-color: pink;
+            width: 500px;
+            height: 500px;
+        }
+
+        .ib {
+            /* 行内块元素,盒子模型的所有属性全部生效 */
+            display: inline-block;
+            margin-top: 2px; /*inline-block上下生效*/
+            margin-left: 15px; 
+            padding: 5px;
+            background-color: blue;
+            width: 50px;
+            height: 50px;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <!-- 
+
+    display 属性可以设置元素的内部和外部显示类型
+
+        外部显式类型：
+            1. block 元素生成一个块元素作用域，在正常流中生成元素前后的换行符（独占一行）。可以设置 width、 height、 margin 和 padding 属性。
+            2. inline 该元素是个内联元素，这些元素不会在其前后生成换行符（不会独占一行）。在正常流中，如果有空间，下一个元素将位于同一行上。设置width,height属性无效。内联元素的margin属性只在水平方向会生效而padding都会生效。
+        遗留显式类型：
+            3. inline-block 元素生成一个行内块元素。它将与周围的内容一起流动，元素不再独占一行但元素具有block的属性，可设置width、 height、 margin 和 padding 属性。
+     -->
+
+     <span class="box">12</span>
+     <span class="ab">ab</span><span class="ab">ab</span>
+
+     <br>
+     <span class="ib">ab</span><span class="ib">ab</span>
+</body>
+</html>
