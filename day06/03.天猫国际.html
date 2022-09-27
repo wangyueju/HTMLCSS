@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./reset.css">
+    <style>
+        :root {
+            --theme_gray: rgb(245, 245, 245)
+        }
+
+        .float-l {
+            float: left;
+        }
+
+        .float-r {
+            float: right;
+        }
+
+        .clear-fix::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        body {
+            background-color: var(--theme_gray);
+        }
+
+        .type-title {
+            text-align: center;
+        }
+
+        .wrapper {
+            margin: 20px auto 50px;
+            width: 1177px;
+            background-color: #fff;
+        }
+
+        .wrapper .hot-nav {
+            padding: 15px 0 36px 20px;
+            width: 118px;
+
+            /* 字体左对齐 */
+            text-align: left;
+        }
+
+        .wrapper .hot-nav .hot-title {
+            margin-bottom: 18px;
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .wrapper .hot-nav li {
+            margin-bottom: 18px;
+            font-size: 12px;
+
+        }
+
+        .wrapper .banner-img {
+            position: relative;
+            width: 192px;
+            background-color: orange;
+        }
+
+
+        .wrapper .banner-img .banner-more {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            color: #fff;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .wrapper .banner-img .banner-more a {
+            display: block;
+            margin: 2px auto;
+            width: 98px;
+            border-top: 2px solid #fff;
+            border-bottom: 2px solid #fff;
+            font-size: 12px;
+            line-height: 16px;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        /* 若果父元素设置了浮动,子元素也是浮动,不需要清除浮动 */
+        .wrapper .hot-goods {
+            width: 598px;
+        }
+
+        .wrapper .hot-goods .good-item {
+            border-right: 1px solid #ddd;
+            padding: 16px 19px;
+            width: 199px;
+            height: 237px;
+        }
+
+        .wrapper .good-item:nth-child(1),
+        .wrapper .good-item:nth-child(2) {
+            border-bottom: 1px solid #ddd;
+        }
+
+        .wrapper .hot-goods .good-item img {
+            width: 161px;
+            /* height: 237px; */
+        }
+
+        .wrapper .good-item .good-title {
+            margin: 8px auto 0;
+            width: 60%;
+            /* 文字不允许换行 */
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-size: 12px;
+            color: rgba(0, 0, 0, .8);
+        }
+
+        /* 价格 */
+        .wrapper .good-item .price {
+            margin-top: 4px;
+            color: red;
+        }
+
+        .wrapper .good-item .price span {
+            text-decoration: line-through;
+            font-size: 12px;
+            color: gray;
+        }
+
+        .wrapper .good-item .price::first-letter {
+            font-size: 14px;
+        }
+
+        /* 第一个商品单独设样式 */
+        .wrapper .good-item:nth-child(1) {
+            width: 398px;
+        }
+
+        .wrapper .good-item:nth-child(1) .good-desc {
+            padding-top: 100px;
+            width: 141px;
+        }
+
+        .wrapper .good-item:nth-child(1) .good-desc .good-title {
+            border-bottom: 1px solid black;
+            padding-bottom: 4px;
+            width: 100%;
+            font-weight: 600;
+            font-size: 15px;
+
+        }
+
+        .wrapper .good-item:nth-child(1) img {
+            width: 212px;
+        }
+
+        .wrapper .hot-brand {
+            padding: 19px 4px 19px 3px;
+            width: 269px;
+            height: 474px;
+
+        }
+
+        .hot-brand h3 {
+            display: inline-block;
+            padding-bottom: 3px;
+            color: #ccc;
+            font-size: 20px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .hot-brand .brand-item {
+        
+            margin-right: 2px;
+            padding-top: 27px;
+            width: 130px;
+            height: 97px;
+            /* background-color: red; */
+        }
+
+        .hot-brand .brand-item:nth-child(2n) {
+            margin-right: 0;
+        }
+
+        .hot-brand .brand-item .brand-title {
+            margin-top: 10px;
+            font-size: 12px;
+            line-height: 15px;
+            color: #888;
+            background-color: #ccc;
+
+        }
+
+        .dot {
+            margin: 15px auto 0;
+            width: 15px;
+            height: 15px;
+            border-radius: 999px;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="type-title">
+        <h2><img src="./个人护理.png" alt="个人护理"></h2>
+        <div class="wrapper clear-fix">
+            <div class="hot-nav float-l">
+                <h3 class="hot-title">最热HOT</h3>
+                <ul>
+                    <li>口红</li>
+                    <li>香水</li>
+                    <li>雪花秀</li>
+                    <li>爱丽小屋</li>
+                    <li>面霜</li>
+                    <li>气垫</li>
+                    <li>迪奥</li>
+                    <li>眼霜</li>
+                    <li>洗面奶</li>
+                    <li>防晒霜</li>
+                    <li>香奈儿</li>
+                    <li>悦诗风吟</li>
+                    <li>唇膏</li>
+                </ul>
+            </div>
+
+            <div class="banner-img float-l">
+                <img src="./sesderma.jpg" alt="sesderma精华">
+                <p class="banner-more">
+                    美容护肤热卖品牌
+                    <a href="#">
+                        查看更多>>
+                    </a>
+                </p>
+            </div>
+            <div class="hot-goods float-l">
+                <div class="good-item float-l">
+                    <div class="good-desc float-l">
+                        <h3 class="good-title">牛乳石碱沐浴露组合cow牛牌沐浴露日本进口牛奶500ml+花香500ml</h3>
+                        <p class="price">￥87<span>￥198.0</span></p>
+                    </div>
+                    <img class="float-r" src="./good1.jpg" alt="1">
+                </div>
+                <div class="good-item float-l">
+                    <img src="./good2.jpg" alt="2">
+                    <h3 class="good-title">牛乳石碱沐浴露组合cow牛牌沐浴露日本进口牛奶500ml+花香500ml</h3>
+                    <p class="price">￥72<span>￥119.0</span></p>
+                </div>
+                <div class="good-item float-l">
+                    <img src="./good3.jpg" alt="3">
+                    <h3 class="good-title">牛乳石碱沐浴露组合cow牛牌沐浴露日本进口牛奶500ml+花香500ml</h3>
+                    <p class="price">￥190<span>￥190.0</span></p>
+                </div>
+                <div class="good-item float-l">
+                    <img src="./good4.jpg" alt="4">
+                    <h3 class="good-title">牛乳石碱沐浴露组合cow牛牌沐浴露日本进口牛奶500ml+花香500ml</h3>
+                    <p class="price">￥1468<span>￥3000.0</span></p>
+                </div>
+                <div class="good-item float-l">
+                    <img src="./good4.jpg" alt="4">
+                    <h3 class="good-title">牛乳石碱沐浴露组合cow牛牌沐浴露日本进口牛奶500ml+花香500ml</h3>
+                    <p class="price">￥89<span>￥259.9</span></p>
+                </div>
+            </div>
+            <div class="hot-brand float-l">
+                <h3>BRAND 个人护理热卖品牌</h3>
+                <div class="clear-fix">
+                    <div class="brand-item float-l">
+                        <img src="./brand-logo.jpg" alt="brand-logo1">
+                        <p class="brand-title">英国新鲜洗发膏</p>
+                    </div>
+                    <div class="brand-item float-l">
+                        <img src="./brand-logo.jpg" alt="brand-logo1">
+                        <p class="brand-title">英国新鲜洗发膏</p>
+                    </div>
+                    <div class="brand-item float-l">
+                        <img src="./brand-logo.jpg" alt="brand-logo1">
+                        <p class="brand-title">英国新鲜洗发膏</p>
+                    </div>
+                    <div class="brand-item float-l">
+                        <img src="./brand-logo.jpg" alt="brand-logo1">
+                        <p class="brand-title">英国新鲜洗发膏</p>
+                    </div>
+                    <div class="brand-item float-l">
+                        <img src="./brand-logo.jpg" alt="brand-logo1">
+                        <p class="brand-title">英国新鲜洗发膏</p>
+                    </div>
+                    <div class="brand-item float-l">
+                        <img src="./brand-logo.jpg" alt="brand-logo1">
+                        <p class="brand-title">英国新鲜洗发膏</p>
+                    </div>
+                    <div class="brand-item float-l">
+                        <img src="./brand-logo.jpg" alt="brand-logo1">
+                        <p class="brand-title">英国新鲜洗发膏</p>
+                    </div>
+                    <div class="brand-item float-l">
+                        <img src="./brand-logo.jpg" alt="brand-logo1">
+                        <p class="brand-title">英国新鲜洗发膏</p>
+                    </div>
+                </div>
+                <div class="dot"></div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

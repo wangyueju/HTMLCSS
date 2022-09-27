@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #000;
+        }
+
+        .big-box {
+            /* position: relative; */
+            margin: 20px auto;
+            width: 400px;
+            height: 400px;
+            background-color: pink;
+        }
+
+        .box {
+
+            display: inline-block;
+            border: 1px solid #000;
+            width: 100px;
+            height: 100px;
+            background-color: rgb(174, 125, 219);
+        }
+
+        .position {
+            /* 
+            position: static; 表示当前的元素是一个正常的布局行为,没有定位.所有元素默认都是该属性
+                定位相关属性 left top right bottom z-index 无效
+                
+            
+            position: relative; 相对定位,
+                1. 元素一开始显示在初始位置,并不会改变文档流的布局(不脱离文档流的定位属性)
+                    我们也可以认为相对定位属性是半脱离文档流,该属性会保留正常文档流的位置,但是定位属性又将其显示位置做了移动脱离文档流
+                2. 定位属性相对于元素的初始位置进行偏移,
+                    例: left: 100px 相对于初始位置的左边向右偏移100px  
+                    例: top: 100px 相对于初始位置的顶部向下偏移100px     
+                    例: right: 100px 相对于初始位置的右边向左偏移100px     
+                    例: bottom: 100px 相对于初始位置的下边向上偏移100px  
+            
+            position: absolute; 绝对定位,该定位会使得元素脱离文档流,页面不会给当前元素预留空间
+               该属性会向上逐级查询距离他最近的设置了定位(非static)的父元素,以该元素为参照系进行偏移.
+               该元素若上层所有父元素都没有设置定位,该元素就以body为基准坐标系 
+               绝对定位元素可以设置margin值
+
+
+            position: fixed  窗口定位,元素会脱离文档流元素相对于当前浏览器可视区域视口进行定位, 当页面滚动该定位的元素不会随着页面的滚动而移动 
+
+
+            position: sticky; 粘性布局,改布局根据正常的文档流进行定位,然后相对他最近的可以滚动的元素进行偏移定位.粘性定位被认为是相对定位和固定定位的混合
+                        注意: 若想让该定位生效一定要设置 left \ top \ bottom \ right 任意一个的属性值
+             */
+            position: sticky;
+            right: 0;
+            bottom: 0;
+            margin: 10px;
+            background-color: orange;
+        }
+
+        .box:nth-child(3) {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="big-box">
+        <div class="box"></div>
+        <div class="box position"></div>
+        <div class="box"></div>
+    </div>
+
+    <img src="./image/state_icon.svg" alt="">
+
+    <p style="color: #fff;">1</p>
+    <p style="color: #fff;">1</p>
+    <p style="color: #fff;">1</p>
+    <p style="color: #fff;">1</p>
+    <p style="color: #fff;">1</p>
+    <p style="color: #fff;">1</p>
+    <p style="color: #fff;">1</p>
+    <p style="color: #fff;">1</p>
+    <p style="color: #fff;">1</p>
+    <p style="color: #fff;">1</p>
+    <p style="color: #fff;">1</p>
+    <p style="color: #fff;">1</p>
+    <p style="color: #fff;">1</p>
+    <p style="color: #fff;">1</p>
+    <p style="color: #fff;">1</p>
+    <p style="color: #fff;">1</p>
+    <p style="color: #fff;">1</p>
+    <p style="color: #fff;">1</p>
+    <p style="color: #fff;">1</p>
+</body>
+
+</html>

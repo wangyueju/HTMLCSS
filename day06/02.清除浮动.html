@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .demo article {
+            width: 30%;
+        }
+
+        .fl {
+            float: left;
+        }
+
+        .fr {
+            float: right;
+        }
+
+        .clear-fix::before {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        .clear-fix::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        .test {
+            margin-top: 10px;
+        }
+
+        .test1 {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+        overflow: hidden
+        给非浮动元素设置清除浮动css样式clear
+     -->
+
+    <div class="demo">
+
+        <p class="test1">111111</p>
+
+        <div class="clear-fix">
+            before
+            <article class="fl">
+                <h2>价值性</h2>
+                <p>小说的价值本质是以时间为序列、以某一人物或几个人物为主线的，非常详细地、全面地反映社会生活中各种角色的价值关系（政治关系、经济关系和文化关系）的产生、发展与消亡过程。非常细致地、综合地展示各种价值关系的相互作用。
+                </p>
+            </article>
+            <article class="fr">
+                <h2>环境性</h2>
+                <p>小说的环境描写和人物的塑造与中心思想有极其重要的关系。在环境描写中，社会环境是重点，它揭示了种种复杂的社会关系，如人物的身份、地位、成长的历史背景等等。自然环境包括人物活动的地点、时间、季节、气候、景物以及场景等等，用来表现人物的身份、地位。自然环境描写对表达人物的心情、渲染环境气氛都有不少的作用。
+                </p>
+            </article>
+            after
+        </div>
+
+
+        <p class="test">被公认的古典文学四大名著：《三国演义》、《水浒传》、《西游记》、《红楼梦》
+            第一个将通俗小说排名的是金圣叹，按他的说法他当时计划评点六部才子书，《庄子》、《离骚》、《史记》、《杜诗》、《水浒传》和《西厢记》。后清康熙年间毛宗岗父子委托金圣叹之名将修订的三国名为《第一才子书——三国演义》（他们托金圣叹之名而不是更早的人也能说明一些问题）。那时有“明代四大奇书”的说法，它的提出亦当是书商们的商业手段，再后红楼代替金瓶梅成为“明清四大奇书”，四大奇书至此定型。“四大名著”全称（四大古典文学名著）是“四大奇书”的现代说法，时间自然也不会早了。因此，“四大名著”（四大奇书）的提法一定是出在《红楼梦》成书之后。
+        </p>
+    </div>
+</body>
+
+</html>

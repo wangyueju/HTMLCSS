@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .video-wrapper {
+            width: 235px;
+        }
+
+        .img-wrapper {
+            position: relative;
+            border-radius: 10px;
+            width: 100%;
+            margin-bottom: 10px;
+            overflow: hidden;
+            background-color: red;
+        }
+
+        .img-wrapper img {
+            /* 图片的1像素边线问题 */
+            display: block;
+        }
+
+        .img-wrapper .play-icon {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+        }
+
+        .img-wrapper .count {
+            position: absolute;
+            bottom: 5px;
+            left: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="video-wrapper">
+        <div class="img-wrapper">
+            <img width="100%" src="./image/video.jpg" alt="">
+            <span class="play-icon">播放</span>
+            <p class="count">
+                <span class="watch-count"> <img src="./image/state_icon.svg"> 131.3万</span>
+                <span class="rating-count">1.1万</span>
+            </p>
+        </div>
+        <p class="video-desc">
+            【4月】骸骨骑士大人奇幻世界冒险中 07
+        </p>
+    </div>
+
+</body>
+</html>

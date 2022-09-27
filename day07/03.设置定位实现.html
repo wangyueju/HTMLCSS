@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        body {
+            background-color: #eee;
+        }
+
+        header {
+            padding: 5px 85px;
+
+
+        }
+
+        header::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        .setting-wrap {
+            float: right;
+            width: 36px;
+            background-color: pink;
+            text-align: center;
+            position: relative;
+        }
+
+        .setting-wrap span:hover {
+            color: rgb(0, 102, 255);
+        }
+
+
+        .setting-wrap:hover .setting-menu {
+            display: block;
+        }
+
+        .setting-wrap .setting-menu {
+            display: none;
+            position: absolute;
+            left: -22px;
+            top: 36px;
+            width: 80px;
+            text-align: center;
+            background-color: #fff;
+            
+        }
+
+        .setting-wrap .setting-menu::before {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 30px;
+            top: -10px;
+            border: 10px solid #fff;
+            border-left-color: transparent ;
+            border-right-color: transparent;
+            border-top: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="setting-wrap">
+            <span>设置</span>
+
+            <ul class="setting-menu">
+                <li>搜索设置</li>
+                <li>高级搜索</li>
+                <li>关闭预测</li>
+                <li>隐私设置</li>
+                <li>关闭热搜</li>
+            </ul>
+        </div>
+    </header>
+
+</body>
+
+</html>
