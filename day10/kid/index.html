@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./src/styles/reset.css">
+    <style>
+        .container {
+            width: 100%;
+        }
+
+        .container:nth-child(1) {
+            background-color: gray;
+        }
+
+        .content-wrap {
+            margin: 0 auto;
+            width: 1140px;
+        }
+
+        .header-wrap {
+            position: relative;
+            height: 777px;
+            overflow: hidden;
+        }
+
+        .title-wrapper {
+            padding-top: 32px;
+            overflow: hidden;
+        }
+
+        .title-wrapper .title {
+            float: left;
+            font-size: 38px;
+            font-weight: 300;
+            color: #fff;
+        }
+
+        .title-wrapper .title span {
+            color: red;
+        }
+
+        /* 父元素本身浮动的话,子元素再设浮动后,父元素是无需清除浮动的 */
+        .titiel-desc {
+            float: right;
+        }
+
+        .titiel-desc .desc-item {
+            float: left;
+            font-size: 13px;
+            width: 261px;
+            color: #fff;
+        }
+
+        .titiel-desc .desc-item i {
+            float: left;
+            margin-right: 10px;
+            font-size: 30px;
+            color: rgb(255, 166, 0);
+        }
+
+        .titiel-desc .desc-item:last-child i {
+            float: left;
+            margin-right: 10px;
+            font-size: 30px;
+            color: red;
+        }
+
+        /* 头部导航条 */
+        .nav-wrapper {
+            position: relative;
+            /* 定位相关的属性,元素必须设置定位否则无效 */
+            z-index: 999;
+
+            margin-top: 24px;
+            border-radius: 999px;
+            padding: 10px 20px;
+            width: 100%;
+            background-color: #fff;
+            overflow: hidden;
+
+        }
+
+        .nav-wrapper .nav-left {
+            float: left;
+        }
+
+        .nav-wrapper .nav-right {
+            float: right;
+        }
+
+        .nav-wrapper .nav-left li,
+        .nav-wrapper .nav-right li {
+            float: left;
+            height: 67px;
+            font-weight: 300;
+            line-height: 67px;
+
+        }
+
+        .nav-wrapper .nav-left li {
+            padding: 0 15px;
+        }
+
+        .nav-wrapper .nav-left li.active {
+            color: red;
+        }
+
+        .nav-wrapper .nav-right li {
+            font-size: 14px;
+            padding: 0 20px;
+            color: rgb(33, 169, 223);
+        }
+
+        .nav-wrapper .nav-right li:nth-child(2) {
+            color: rgb(26, 161, 26);
+        }
+
+        .nav-wrapper .nav-right li:nth-child(3) {
+            color: rgb(235, 172, 57)
+        }
+
+        .welcome {
+            margin-top: 48px;
+            padding: 48px 15px 16px;
+            width: 475px;
+        }
+
+        .welcome p {
+            font-size: 17px;
+            line-height: 1.5;
+            color: red;
+        }
+
+        .welcome h2 {
+            margin-bottom: 16px;
+            font-size: 48px;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .welcome h3 {
+            margin-bottom: 48px;
+            font-weight: 300;
+            color: #fff;
+        }
+
+        .welcome .btn {
+            display: inline-block;
+            border-radius: 30px 0;
+            padding: 24px 20px;
+            font-size: 14px;
+            color: #fff;
+            background-color: red;
+        }
+
+        .header-wrap .bg-img {
+            position: absolute;
+            bottom: -42px;
+            right: 0;
+            width: 540px;
+        }
+
+        /* 第二栏 */
+
+        .content-wrap .content-list {
+            padding: 112px 0;
+            overflow: hidden;
+        }
+
+        .content-item {
+            float: left;
+            position: relative;
+            margin-right: 45px;
+            padding: 40px;
+            width: 350px;
+            text-align: center;
+            color: #fff;
+            background-color: tomato;
+        }
+
+        .content-item i {
+            position: absolute;
+            top: -40px;
+            left: 135px;
+            display: block;
+            border-radius: 999px;
+            width: 80px;
+            height: 80px;
+            font-size: 30px;
+            line-height: 80px;
+            text-align: center;
+            /*  inherit 继承属性*/
+            background-color: inherit;
+        }
+
+        .content-item:nth-child(2) {
+            background-color: #fdb62f;
+        }
+
+        .content-item:last-child {
+            margin-right: 0;
+            background-color: #16c3b0;
+        }
+
+        .content-item h2 {
+            margin-top: 36px;
+        }
+
+        .content-item p {
+            margin-top: 10px;
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 2;
+        }
+    </style>
+    <link rel="stylesheet" href="./src/styles/media_style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="content-wrap header-wrap">
+            <div class="title-wrapper">
+                <h3 class="title">Kiddy<span>.</span></h3>
+                <ul class="titiel-desc">
+                    <li class="desc-item">
+                        <i>A</i>34 Street Name, City Name Here,
+                        United States
+                    </li>
+                    <li class="desc-item">
+                        <i>B</i>Sunday - Friday 8:00AM - 4:00PM
+                        Saturday CLOSED
+                    </li>
+                </ul>
+            </div>
+            <div class="nav-wrapper">
+                <ul class="nav-left">
+                    <li class="active">Home</li>
+                    <li>About</li>
+                    <li>package</li>
+                    <li>Gallery</li>
+                    <li>Pricing</li>
+                    <li>Contact</li>
+                </ul>
+
+                <ul class="nav-right">
+                    <li>T</li>
+                    <li>Q</li>
+                    <li>F</li>
+                </ul>
+
+            </div>
+            <div class="welcome">
+                <p>Welcome To Our Website</p>
+                <h2>Bring Fun Life To Your Kids</h2>
+                <h3>Amazing Playground for your kids</h3>
+                <div class="btn">LEARN MORE</div>
+            </div>
+            <div class="bg-img">
+                <img width="100%" src="./src/images/kid_transparent.png">
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="content-wrap ">
+            <ul class="content-list">
+                <li class="content-item">
+                    <i>1</i>
+                    <h2>Indoor Games</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima nesciunt, mollitia, hic enim id
+                        culpa.</p>
+                </li>
+                <li class="content-item">
+                    <i>2</i>
+                    <h2>Outdoor Game And Event</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima nesciunt, mollitia, hic enim id
+                        culpa.</p>
+                </li>
+                <li class="content-item">
+                    <i>3</i>
+                    <h2>Camping for Kids</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima nesciunt, mollitia, hic enim id
+                        culpa.</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>

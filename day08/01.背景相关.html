@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        body {
+            background-color: gray;
+        }
+
+        .box {
+            border: 10px solid rgba(0, 100, 240, .55);
+            width: 200px;
+            /* height: 200px; */
+            font-size: 0;
+            /* 设置元素的背景颜色 */
+            /* background-color: red; */
+            /*  
+                指定元素的背景图片,背景图片默认不会适应当前元素的大小,默认情况下背景图片从元素左上角对齐平铺,如果图片过大我们只能看到图片的一部分
+                
+                注意: 背景图片是在 背景颜色上方的
+             */
+            /* background-image: url(./3.webp); */
+
+            /* 
+                控制背景图片的平铺,支持的属性值 
+                    repeat     表示 x轴 y轴都重复平铺
+                    repeat-x   表示 只有x轴重复平铺
+                    repeat-y   表示 只有y轴重复平铺
+                    no-repeat  表示 图片不平铺 
+            */
+            /* background-repeat: repeat; */
+
+            /* 
+                控制图片的大小 语法
+                1. background-size: width ;
+                 1.1 background-size: width height ;
+                2. background-size: cover ; 保证宽图片高比的情况下放大图片占满盒子区域,该属性可能会导致图片部分超出容器
+                3. background-size: contain ; 保证宽图片高比的情况下放大图片适应盒子区域,该属性会导致图片与父容器之间存在留白
+             */
+            /* background-size: 50px 50px; */
+
+
+            /* 
+            background-position: 运行你对对背景图片进行定位,让图片移动到当前容器的指定位置
+            语法 
+                1. background-position: x 
+                2. background-position: x y
+
+                x,y 支持像素\百分比\关键字
+                x: 15px
+                x: 20%
+                x: left 左端 center居中 right右端
+                
+                y: 15px
+                y: 20%
+                y: top 上端 center居中 bottom右端
+                
+
+            */
+            /* background-position: 0 0; */
+
+            /* 
+            background-origin 背景定位, background-position 相对于什么位置进行定位
+                border-box  元素边框进行定位
+                padding-box 元素padding层进行定位
+                content-box 元素内容区域不包含padding区域进行定位
+
+             */
+            /* background-origin: border-box; */
+
+
+            /*  
+            background-clip 指定背景图片的显示区域
+                border-box 背景显示区域包含 border padding content
+                padding-box 背景显示区域包含 padding content
+                content-box 背景显示区域包含  content
+             */
+            /* background-clip: border-box; */
+
+
+            /* 页面滚动时背景图片是否跟着滚动 scroll 滚动  fixed不滚动 */
+            /* background-attachment: fixed; */
+
+            /*
+                background 是以下属性的简写形式
+
+                background-color
+                background-image
+                background-attachment
+                background-position
+                background-size
+                background-repeat
+                background-origin
+                background-clip
+
+                在使用时,不需要全部设置,只需要设置你想要指定的样式.在使用background属性时需要遵循以下原则
+                1. background-color 只能在开头设置
+                2. background-size 一定要在 background-position之后,并且使用 / 将其隔开
+                3. 不需要设置的属性可以忽略
+
+
+            */
+
+            background: yellow url(./3.webp) 10px / 50px 50px   no-repeat ; 
+
+            padding: 25px;
+            font-size: 18px;
+            overflow: auto;
+        }
+
+        /*
+        .box li {
+            display: inline-block;
+            width: 20vw;
+            height: 60px;
+            background-color: blueviolet;
+        }
+
+        .box li:nth-child(1) {
+            background-image: url(./m1.png);
+            background-repeat: no-repeat;
+            background-color: aqua;
+            background-size: 40px 40px;
+
+             background-position: center center; 
+        }
+
+        .box li:nth-child(2) {
+            background-image: url(./m2.png);
+            background-repeat: no-repeat;
+            background-color: green;
+            background-size: contain;
+            background-position: center center;
+        }
+
+        .box li:nth-child(3) {
+            background-image: url(./m3.png);
+            background-repeat: no-repeat;
+            background-color: pink;
+            background-size: contain;
+            background-position: center center;
+        }
+
+        .box li:nth-child(4) {
+            background-image: url(./m4.png);
+            background-repeat: no-repeat;
+            background-color: orange;
+            background-size: contain;
+            background-position: center center;
+        }
+
+        .box li:nth-child(5) {
+            background-image: url(./m5.png);
+            background-repeat: no-repeat;
+            background-color: skyblue;
+            background-size: contain;
+            background-position: center center;
+        }
+
+        .demo {
+            width: 45px;
+            height: 45px;
+            background-image: url(./网易云雪碧图.png);
+            background-size: 332px 194px;
+            background-position: -48px 0;
+            background-repeat: no-repeat;
+            background-color: pink;
+
+        }
+
+        .bili-box {
+            width: 170px;
+            height: 96px;
+            background-image: url(./752138457_a1864b-0001.jpg);
+            background-size: 1700px;
+            background-repeat: no-repeat;
+            background-position: -0px -96px;
+        }
+        */
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        hello <br>
+        hello <br>
+        hello <br>
+        hello <br>
+        hello <br>
+        hello <br>
+        hello <br>
+        hello <br>
+        hello <br>
+        hello <br>
+        hello <br>
+        hello <br>
+        hello <br>
+    </div>
+    <!--  
+    <ul class="box">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+
+    <div class="demo"></div>
+
+    <div class="bili-box"></div>
+    -->
+</body>
+
+</html>

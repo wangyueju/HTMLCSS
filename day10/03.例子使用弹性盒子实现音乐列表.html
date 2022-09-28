@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .music-list {
+            display: flex;
+            align-items: center;
+            width: 100vw;
+        }
+
+        .rank {
+            /* 在盒子模型中固定元素的尺寸 */
+            flex: 0 0 40px;
+            width: 40px;
+            font-size: 17px;
+            text-align: center;
+            color: red;
+        }
+
+        .music-content {
+            /* music-content 及是一个flex子项,又是一个flex容器  */
+            display: flex;
+            flex: 1;
+            padding: 5px 0;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .music-content .music-dec {
+            flex: 1;
+
+        }
+
+        .music-content .music-dec h2 {
+            font-size: 17px;
+        }
+
+        .music-content .music-dec p {
+            margin-top: 5px;
+            font-size: 12px;
+        }
+
+        .music-content .play-btn {
+            display: flex;
+            flex: 0 0 42px;
+            width: 42px;
+            /* background-color: red; */
+        }
+
+        .music-content .play-btn i {
+            margin: auto;
+            display: block;
+            width: 24px;
+            height: 24px;
+            
+            background-image: url(./index_icon_3x.png);
+            background-size: 166px 97px;
+            background-position: -24px 0;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="music-list">
+        <div class="rank">01</div>
+        <div class="music-content">
+            <div class="music-dec">
+                <h2>再见莫妮卡</h2>
+                <p>彭席彦 / Franky弗兰奇 - 再见莫妮卡</p>
+            </div>
+            <div class="play-btn">
+                <i></i>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

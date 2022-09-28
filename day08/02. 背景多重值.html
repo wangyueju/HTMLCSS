@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            所有的背景属性都可以设置多重值,多重值之间使用 , 隔开
+
+        */
+        .box {
+            /* background-image: url(./coffee.svg), url(./3.webp), url(./m1.png);
+            background-size: 50px 50px, 100px , 80px;
+            background-position: center, 100px , 0; */
+
+            /* background: url(./coffee.svg) center, url(./3.webp) no-repeat 10px 10px / 80px, url(./m1.png); */
+            
+            /* background-image: url(./m1.png);
+            background-repeat: no-repeat;
+            background-size: 120px;
+            background-position: center; */
+            background: url(./m1.png) no-repeat center / 120px;
+            width: 1000px;
+            height: 1000px;
+        }
+
+
+        /* 背景图片与 背景图片的相关css样式 */
+        .box:hover {
+            background-image: url(./m4.png);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+</body>
+
+</html>

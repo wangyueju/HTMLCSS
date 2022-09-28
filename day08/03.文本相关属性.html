@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {
+
+            width: 400px;
+
+            background-color: pink;
+            /* * text-indent 文本缩进属性,值可以为负 */
+            text-indent: -2px;
+            /* * 文本对齐 */
+            text-align: center;
+            /* 字母字符之间的间距 */
+            letter-spacing: 0px;
+            /* 单词之间的间距 */
+            word-spacing: 20px;
+            /* * 文本转换  none(不转换) uppercase(小写转大写)  lowercase(大写转小写) capitalize(每个单词首字母以大写开头)*/
+            text-transform: uppercase;
+            /* * 文本的装饰 none(默认值 标准文本)  underline(下划线) overline(文字上边线) line-through(删除线)*/
+            text-decoration: line-through;
+            /* * 文本换行,设置元如何控制文字的空白 
+                    normal(默认值,浏览器忽略 长单词或连续的数字不会换行)
+                    nowrap 文本不换行,一行展示
+            */
+            white-space: nowrap;
+            /* * 长单词换行  
+                normal  中文日文韩文允许在任意字符间换行, 英文 阿拉伯数字必须在空格处换行
+                break-all 允许所有文字之间增加换行符,可以打断长单词和长的阿拉伯数字,
+
+             */
+            word-break: break-all;
+            /* 注意 text-overflow属性一定要跟overflow: hidden;配合使用 */
+            overflow: hidden;
+            /* 
+             * 文本超出容器时该如何显示
+                clip      默认值,在内容区域的极限处截断文本,文字可能不完整的 
+                ellipsis  超出部分使用省略号代替
+            */
+            text-overflow: ellipsis;
+        }
+    </style>
+</head>
+
+<body>
+    <p>
+        Lorem ipsum dolor sit amet,
+        consectetur adipiscing elit. Nam pellen tesque vehicu la con vallis.
+    </p>
+
+    <p>1111111111111111111111111111111111111111111111111111111111111111111111111111111111111</p>
+    <p>asdhdhsdhshdsdhjkdahdhsjhdshdhsjhdshdshdhsjhdkshkdhskdh</p>
+    <p>考虑的时刻拉很多快乐哈撒拉黑都快来撒会考虑的哈萨克良好的快乐沙考虑到哈萨克拉好多了撒哈拉端口号撒</p>
+</body>
+
+</html>

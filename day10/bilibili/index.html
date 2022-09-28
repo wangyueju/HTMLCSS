@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./src/styles/reset.css">
+    <link rel="stylesheet" href="./src/styles/basic.css">
+    <style>
+        body {
+            /* 网页响应式布局最小宽度 */
+            width: 100vw;
+            min-width: 1100px;
+        }
+
+        header {
+            position: relative;
+            width: 100%;
+            height: 155px;
+        }
+
+        .header-nav {
+            padding: 0 10px;
+            width: 100%;
+            height: 64px
+        }
+
+        .header-nav::after {
+            display: block;
+            clear: both;
+            content: '';
+        }
+
+        /* 搜索框 */
+        .search-bar {
+            position: relative;
+            top: 12px;
+            border-radius: 8px;
+            margin-left: calc((75% - 940px)/2);
+            padding: 4px 8px;
+            width: 25%;
+            height: 40px;
+            background-color: var(--graph_bg_regular);
+        }
+
+        .search-bar input {
+            border: 0;
+            width: calc(100% - 42px);
+            height: 32px;
+            outline: none;
+            background-color: transparent;
+
+        }
+
+        .search-bar .search {
+            position: absolute;
+            right: 8px;
+            top: 4px;
+            display: block;
+            border-radius: 6px;
+            width: 32px;
+            height: 32px;
+            background-image: url(./src/images/3.svg);
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+
+        .search-bar .search:hover {
+            background-color: rgba(147, 158, 127, 0.6);
+        }
+
+        .header-nav .nav-left {
+            float: left;
+        }
+
+        .header-nav .nav-right {
+            float: right;
+        }
+
+
+        .header-nav .nav-left li,
+        .header-nav .nav-right li {
+            float: left;
+            margin-right: 12px;
+            text-align: center;
+        }
+
+        .header-nav .nav-left li:last-child,
+        .header-nav .nav-right li:last-child {
+            margin-right: 0;
+        }
+
+        .header-nav .nav-left li a,
+        .header-nav .nav-right li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .header-nav .nav-left li {
+            line-height: 64px;
+        }
+
+        .header-nav .nav-right {
+            padding: 14px 0;
+        }
+
+        .header-nav .nav-right li:first-child {
+            border-radius: 999px;
+            width: 36px;
+            height: 36px;
+            background-color: #fff;
+            line-height: 36px;
+        }
+
+        .header-nav .nav-right li:first-child a {
+            color: var(--brand_blue);
+        }
+
+        .header-nav .nav-right .nav-right-item img {
+            margin: 0 auto;
+            display: block;
+            width: 22px;
+            height: 21px;
+        }
+
+
+        .header-nav .nav-right .nav-right-item-btn {
+            position: relative;
+            top: 2px;
+            border-radius: 8px;
+            width: 90px;
+            height: 34px;
+            line-height: 34px;
+            background-color: #fb7299;
+        }
+
+        .search-bar {
+            float: left;
+            /* 居中 calc */
+        }
+
+
+        .header-banner {
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: -1;
+            width: 100%;
+            height: 100%;
+            background-image: url(./src/images/bg-image.webp);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center 0;
+        }
+
+        .header-banner a {
+            position: absolute;
+            left: 56px;
+            bottom: 10px;
+            width: 162px;
+            height: 78px;
+        }
+
+        .header-banner a img {
+            width: 100%;
+            height: 100%;
+        }
+
+
+
+        @media (max-width:1279.9px) {
+            .header-nav .nav-right .nav-right-item:not(:first-child) {
+                padding: 8px 0;
+            }
+
+            .header-nav .nav-right .nav-right-item span,
+            .header-nav .nav-right .nav-right-item-btn span {
+                display: none;
+            }
+
+            .header-nav .nav-right .nav-right-item-btn {
+                width: 34px;
+            }
+
+            .search-bar {
+                margin-left: calc((70% - 772px)/2);
+                width: 30%;
+            }
+
+        }
+
+
+        @media (max-width:1140px) {
+
+            .search-bar {
+                margin-left: calc((80% - 772px)/2);
+                width: 20%;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+        如果你预计网站的大部分流量来自移动端，那么应该采取“移动端优先”的策略，再为PC端做兼容。
+
+        如果你预计网站的大部分流量来自PC端，那么应该采取“PC端优先”的策略，再为移动端做兼容。
+
+        优雅降级  先写最大屏幕移动端/PC端效果 再适配小屏幕
+
+        渐进增强  先考虑小屏UI效果,逐渐放大屏幕适配大屏
+     -->
+
+    <header>
+        <div class="header-nav">
+            <ul class="nav-left">
+                <li class="nav-left-item">
+                    <a href="#">
+                        首页
+                    </a>
+                </li>
+                <li class="nav-left-item">
+                    <a href="#">
+                        番剧
+                    </a>
+                </li>
+                <li class="nav-left-item">
+                    <a href="#">
+                        直播
+                    </a>
+                </li>
+                <li class="nav-left-item">
+                    <a href="#">
+                        游戏中心
+                    </a>
+                </li>
+                <li class="nav-left-item">
+                    <a href="#">
+                        会员购
+                    </a>
+                </li>
+                <li class="nav-left-item">
+                    <a href="#">
+                        漫画
+                    </a>
+                </li>
+                <li class="nav-left-item">
+                    <a href="#">
+                        赛事
+                    </a>
+                </li>
+                <li class="nav-left-item">
+                    <a href="#">
+                        十佳
+                    </a>
+                </li>
+                <li class="nav-left-item">
+                    <a href="#">
+                        下载客户端
+                    </a>
+                </li>
+            </ul>
+
+            <div class="search-bar">
+                <input type="text" placeholder="听, 狗哭的声音">
+                <i class="search"></i>
+            </div>
+
+            <ul class="nav-right">
+                <li class="nav-right-item">
+                    <a href="#">登录</a>
+                </li>
+                <li class="nav-right-item">
+                    <a href="#">
+                        <img src="./src/images/4.svg">
+                        <span class="nav-text">大会员</span>
+                    </a>
+                </li>
+                <li class="nav-right-item">
+                    <a href="#">
+                        <img src="./src/images/5.svg">
+                        <span class="nav-text">消息</span>
+                    </a>
+                </li>
+                <li class="nav-right-item">
+                    <a href="#">
+                        <img src="./src/images/6.svg">
+                        <span class="nav-text">动态</span>
+                    </a>
+                </li>
+                <li class="nav-right-item">
+                    <a href="#">
+                        <img src="./src/images/7.svg">
+                        <span class="nav-text">收藏</span>
+                    </a>
+                </li>
+                <li class="nav-right-item">
+                    <a href="#">
+                        <img src="./src/images/8.svg">
+                        <span class="nav-text">历史</span>
+                    </a>
+                </li>
+                <li class="nav-right-item">
+                    <a href="#">
+                        <img src="./src/images/9.svg">
+                        <span class="nav-text">创作中心</span>
+                    </a>
+                </li>
+                <li class="nav-right-item">
+                    <a href="#">
+                        <img src="./src/images/9.svg">
+                        <span class="nav-text">创作中心</span>
+                    </a>
+                </li>
+                <li class="nav-right-item-btn">
+                    <a href="#">
+                        <img src="./src/images/10.svg">
+                        <span class="nav-text">投稿</span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+        <div class="header-banner">
+            <a href="#">
+                <img src="./src/images/logo.png" alt="bilibili夏日祭">
+            </a>
+        </div>
+    </header>
+</body>
+
+</html>

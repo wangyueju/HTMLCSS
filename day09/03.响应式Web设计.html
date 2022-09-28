@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            现在各种设备屏幕大小各式各样,屏幕的分辨率也不相同的,响应式Web设计就是一种自动响应不同设备的设计方案
+            实现此技术的核心就是媒体查询(media query)
+
+            媒体查询是通过设备某些特征,功能用户选择定位当前浏览器,基于这些内容响应式的执行相关的代码.其中最常见就暗示媒体查询视口大小,并通过这种查询方式慢慢催生了响应式设计理念
+        */
+        @import url(./css/test.css) screen and (max-width: 850px);
+
+
+        .demo {
+            font-size: 19px;
+            background-color: aqua;
+        }
+
+        /* 查询视口宽度是否最大不超过990px */
+        /* @media (max-width: 990px) {
+            .demo {
+                font-size: 13px;
+                background-color: orange;
+            }
+        } */
+
+        /* 上面的代码与下方代码等价,都是使用媒体查询查询视口大小,不指定设备时默认都是查询视口(屏幕), 屏幕不仅仅只可以查询宽度,还可以查询设备分辨率,设备方向,操作系统首选项 */
+        @media screen and (max-width: 990px) {
+            .demo {
+                font-size: 14px;
+                background-color: green;
+            }
+
+        }
+
+        @media screen and (max-width: 600px) {
+            .demo {
+                font-size: 12px;
+                background-color: blue;
+            }
+
+        }
+    </style>
+
+    <!-- HTML的某些元素同样支持使用media属性 -->
+    <link rel="stylesheet" href="./css/small.css" media="(max-width: 460px)">
+    <link rel="stylesheet" href="./css/middle.css" media="(min-width: 461px)">
+    <link rel="stylesheet" href="./css/big.css" media="screen and (min-width: 1100px)">
+    <!-- 
+        以上方式适合将css按照不同媒体查询值进行拆分,比较适合对网页进行微调,
+        但是要注意 media  属性并不会阻止浏览器下载不符合当前媒体查询的样式文件.只是给不符合要求的样式文件给了较低加载优先级
+
+        设备会请求当前尺寸,he自身尺寸以下的所有css文件,比自身尺寸大的css文件不请求
+      -->
+
+    <style media="(max-width: 960px)">
+        div {
+            background-color: #fc0;
+        }
+
+        /* 在css中使用媒体查询的语法, 媒体查询通过使用关键字进行查询   @media  设备类型? 关系关键字? 查询条件1  (关系关键字? 查询条件2)? ...  */
+
+        @media screen and (min-width: 600px) or (max-width: 750px) {
+            div {
+                border: 4px solid green
+            }
+        }
+
+        /* 在css中可以是@import 配合媒体查询进行按需外部输入css文件(不推荐使用)， 语法 @import url(./style.css)  设备类型? 关系关键字? 查询条件1  (关系关键字? 查询条件2)? ... */
+
+        /* 
+            媒体查询设备类型
+            all    匹配所有设备
+            print  匹配在打印预览时页面设备
+            screen 匹配屏幕设备
+            speech 匹配可听读设备,屏幕阅读器
+            
+            设备类型仅仅支持以下几个关键字
+            only 主要为了解决旧版浏览器忽略媒体特征问题  
+                旧版浏览器会将 @media screen and (min-width: 600px) 理解为 @media screen 添加only之后可以解决此问题 @media only screen and (min-width: 600px) 
+            not 取反表示除了这种类型的设备
+            
+            ,   多个媒体类型可以使用,链接
+        */
+        @media  screen ,print {
+            div {
+                text-align: center;
+            }
+        }
+
+        /* 
+            媒体特征,匹配了媒体类型后,对齐特征值进行查询的语句,支持查询以下特征
+
+            width 视口宽度,支持 min-width max-width 范围
+            height 视口高度,支持 min-height max-height 范围
+            resolution 屏幕像素密度,值特定比例值 二倍图手机 2dppx == 320dpi,支持 min-resolution max-resolution
+            -webkit-device-pixel-ratio 屏幕像素密度,无单位比例值,是标准 resolution 媒体类型的一个替代方案。支持  -webkit-min-device-pixel-ratio -webkit-max-device-pixel-ratio 范围
+                例子 -webkit-min-device-pixel-ratio: 2 等价于 min-resolution: 2dppx 等价于 min-resolution: 320dpi
+            aspect-ratio 屏幕宽高比 1980/650 , 支持 min-aspect-ratio, max-aspect-ratio 范围
+            orientation 屏幕的方向. 高大于宽(竖屏)portrait 宽大于高(横屏)landscape
+        */
+
+
+        /* 配合媒体特征的运算符
+        
+           and 表示并且: and 运算符前后查询条件都满足时媒体查询语句才会生效 
+
+           or  表示或者: 该运算符有一个简写为一个逗号(,)推荐使用逗号代替or(or单词已经被舍弃了),他表示 or 运算符前后查询条件有任意一个满足就匹配该媒体查询语句
+
+           not 表示否定: 注意CSS3版本 not已经不可以再否定单独的某个媒体特征,现在not只能在媒体类型之前,否定整个语句
+                    @media screen not (min-width: 750px) { //Error错误
+            
+                    }
+
+        */
+        /* 表示不能是屏幕设备并且不能是横屏 */
+        @media not screen and (orientation: landscape){
+            
+        }
+        
+    </style>
+</head>
+
+<body>
+    <p class="demo"> hello </p>
+    <div>hello</div>
+</body>
+
+</html>

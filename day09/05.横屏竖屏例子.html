@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .video-wrapper {
+            width: 100vw;
+            background-color: red;
+
+        }
+
+        .video {
+            width: 100%;
+            height: 274px;
+            background-color: black;
+        }
+
+        .control {
+            width: 100%;
+            height: 40px;
+            background-color: pink;
+        }
+
+        @media screen and (orientation : landscape) {
+            .video-wrapper {
+                position: fixed;
+                left: 0;
+                top: 0;
+                width: 100vw;
+                height: 100vh;
+            }
+
+            .video-wrapper:hover .control { 
+                display: block;
+            }
+
+
+            .video {
+                height: 100%;
+            }
+
+            .control {
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="video-wrapper">
+        <div class="video"></div>
+        <div class="control"></div>
+    </div>
+</body>
+
+</html>

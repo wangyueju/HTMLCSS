@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            margin: 0 auto;
+            width: 80%;
+            height: 400px;
+            background: rgb(63, 94, 251);
+            background: -moz-radial-gradient(circle, rgba(63, 94, 251, 1) 0%, rgba(252, 70, 107, 1) 100%);
+            background: -webkit-radial-gradient(circle, rgba(63, 94, 251, 1) 0%, rgba(252, 70, 107, 1) 100%);
+            background: radial-gradient(circle, rgba(63, 94, 251, 1) 0%, rgba(252, 70, 107, 1) 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#3f5efb", endColorstr="#fc466b", GradientType=1);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+        CSS3 已经不存在, 我们现在所谓的css3都是 css2.1之后的更新都归类到我们所谓的css3中
+
+        W3C 要制定一个新的标准新的规范是很繁琐, 所有css3样式更新都要经过 提出意见 审核 考察 再推荐应用,如果说摸个属性经过这一些流程,浏览器都会将其加入支持中
+
+        所有发布属性在没有最后拍板之前都有可能被否定,被修改,被更新,浏览器为了提前支持该实验属性会将该属性加上自己浏览器私有前缀,等当前新的css3属性被W3C真正纳入标准后.浏览器就会忽略掉私有前缀
+
+        常见的私有前缀
+        
+            -moz     代表火狐私有前缀
+            -ms      代表IE私有前缀
+            -webkit  代表chrome\safari私有前缀
+            -o       代表opera私有前缀
+
+         
+           注意  对于私有属性的顺序要注意，把标准写法放到最后，兼容性写法放到前面
+                 我们通过上面的例子可以看出,如果要编写兼容性代码,是极其耗时的我们要编写大量的代码,但是我们无需关系此问题,以后我们会有一些后处理工具自动解析css并将需要兼容处理的css样式属性自动生成其私有前缀 
+                 这里推荐的自动化后处理工具Autoprefixer，该工具我们会在 webpack 前端工程化截断课程中讲授。
+        
+
+     -->
+    <div class="box">hello</div>
+</body>
+
+</html>

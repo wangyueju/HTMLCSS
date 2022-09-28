@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        i {
+            display: inline-block;
+            width: 12px;
+            height: 8px;
+            background-image: url(./index.png);
+            background-size: 166px 97px;
+        }
+
+
+        @media (min-resolution: 2dppx) {
+            i {
+                background-image: url(./index.png);
+                background-size: 166px 97px;
+            }
+        }
+
+        @media (min-resolution: 3dppx) {
+            i {
+                background-image: url(./index_icon_3x.png);
+                background-size: 166px 97px;
+            }
+        }
+
+        /*
+        @media (-webkit-min-device-pixel-ratio: 2) {
+            i {
+                background-image: url(./index.png);
+                background-size: 166px 97px;
+            }
+        }
+
+        @media (-webkit-min-device-pixel-ratio: 3) {
+            i {
+                background-image: url(./index_icon_3x.png);
+                background-size: 166px 97px;
+            }
+        }
+        */
+    </style>
+</head>
+<body>
+
+    <i></i>
+    <!-- 
+        像素密度为 2 (css写1px 真实显示2px)的 设备使用2倍图
+
+
+     -->
+</body>
+</html>

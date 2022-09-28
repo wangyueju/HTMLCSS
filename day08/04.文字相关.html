@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {
+            background-color: pink;
+            /* 文本的颜色 */
+            color: red;
+            /* line-hight 行高, 行与行之间基线的距离 支持 长度值 百分比 数字(字体大小乘以该数字)*/
+            line-height: 32px;
+
+            /* 
+                font-family 文本字体
+                1. 字体名称分为两类 
+                        通常系列字体名称
+                        具体字体名称   
+                2. 字体优雅降级,如下所示.页面使用特殊字体完全取决于当前用户的电脑有没有该字体,如果没有没有此字体页面无法使用你指定的字体.为了解决该问题.早期开发人员推荐使用一个通用字体系列作为后路
+                   浏览器逐个查询当前前字体是否可用,当字体不可用浏览器就会"降级"查询下一个字体,知道找到可以使用的字体, 所有浏览器都有几种默认字体    monospace   serif  sans-serif   
+             */
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            /* 字体风格 
+                normal 默认,标准字体样式
+                italic 斜体字,系统字体自带的斜体字
+                oblique 斜体,将标准字体倾斜处理
+
+                有少量字体不带有斜体字属性,此时使用italic文字不会倾斜,但是使用oblique可以倾斜
+            */
+            font-style: italic;
+
+            /* 
+            font-variant 文字变形(了解)
+                normal 正常字体样式
+                 small-caps 小型大写字母字体
+             */
+             /* font-variant: small-caps; */
+
+             /* 
+                字体加粗
+                    normal 正常字体
+                    bold   粗体字符
+                    bolder 更粗体字符 
+                    100~900 又细到粗, 400等于normal, 但是pc端效果400以下都是细的 600以下都是normal 600以上包括600都是加粗
+                    lighter 细体字符
+             */
+             font-weight: lighter;
+            
+             /* 
+             字体大小 (本质上字的字符框的高度,所以字体不同时字符字形可能会比字符框高或矮)
+                百分比
+                长度单位 
+             */
+             font-size: 16px;
+
+             /* font 字体属性的简写方式 
+                
+                font-style
+                font-variant
+                font-weight
+                font-size/line-height
+                font-family
+
+                以上属性可以省略,未设置的属性将会使用其默认值
+             */
+
+             /* font: oblique  bold 12px/1.5 arial,sans-serif; */
+             font: oblique  600 16px arial,sans-serif;
+
+        }
+
+        div {
+            width: 40px;
+            height: 40px;
+            /* 当前字体大小 16px * 1.5  = 24px */
+            line-height: 1.5; 
+            background-color: orange;
+        }
+    </style>
+</head>
+
+<body>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br>
+        Nam pellen tesque vehicu la con vallis.
+    </p>
+    <div>
+        hello <br>
+        world
+    </div>
+</body>
+
+</html>

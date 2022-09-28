@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            flex的使用, 若使用flex布局首先需要把容器变成flex box, 通过 display:flex
+
+
+            补充(不重要): inline-flex 如果需要使用行内弹性盒子可以使用inline-flex(了解,几乎用不到)
+            注意(不重要): 因为flex是css3的属性,所有新浏览器都支持该样式,如果说要兼容低版本浏览器,可以给flex添加浏览器私有前缀
+            
+            display: -weblit-flex
+            display: -moz-flex
+            display: -ms-flex
+            display: -o-flex
+            display: flex
+
+         */
+
+        /* 
+            flex的方向,与弹性盒子的主轴和交叉轴有关,
+
+            主轴方向 由 flex-direction 指定
+                flex-direction: row 横轴(从左往右) | row-reverse 反向横轴(从右往左) | colum 纵轴(从上到下) | column-reverse 反向纵轴(从下网上)
+            
+                注意:   主轴指定完毕后交叉轴,自然确定下来.例子当我们设置横轴(x轴)为主轴时,纵轴(y轴)就自然而然成为交叉轴
+
+
+            主轴对齐  justif-content ,当弹性盒子确定了主轴后就可以通过主轴对齐属性控制内部元素的对齐
+                
+                start           主轴阅读起始方向
+                end             主轴阅读结束方向
+                center          主轴居中对齐
+                space-between   主轴两端贴边对齐,每个元素之间保持相同距离
+                space-around    主轴两端留白对齐,每个元素之间保持相同距离,留白的距离是元素与元素之间距离的一半
+
+
+            交叉轴对齐 align-items定义了flex子元素在容器的交叉轴的对齐方式
+                stretch    默认值,当弹性盒子内部子元素没有设置交叉轴对应的尺寸(宽/高),元素会占满交叉轴
+                flex-start 元素在交叉轴起点位置对齐    
+                flex-end   元素在交叉轴结束位置对齐
+                center     元素在交叉轴居中对齐
+                baseline   元素的文字基线对齐
+
+
+         */
+
+        .box {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: space-around;
+            align-items: baseline;
+            height: 400px;
+            background-color: aqua;
+        }
+
+        p {
+            border: 1px solid red;
+
+        }
+
+
+        /* 
+        如何让一个元素左右上下都居中
+        
+            text-align 或 margin 进行水平居中,使用行高进行垂直居中
+            
+            设置元素的display table-cell 通过 vertical-align垂直居中
+
+
+            flex 可以很简单做到以上效果,并且弹性盒子内部的子元素margin:auto可以实现上下左右居中
+
+         */
+
+        .demo {
+            display: flex;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+
+        .demo .center {
+            margin: auto;
+            width: 18px;
+            height: 36px;
+            background-color: green;
+        }
+
+        .box2 {
+            height: 500px;
+            display: flex;
+            /* 
+            flex-wrap flex容器的属性,表示在当前容器内若子项超出父容器是否允许换行
+
+                nowrap       默认值 不换行
+                wrap          主轴为横轴时, 从上往下换行
+                wrap-reverse  主轴为横轴时, 从下往下换行
+            
+            */
+            /* flex-wrap: wrap-reverse; */
+
+            /* flex-flow 时 flex-decoration flex-wrap的简写形式,但是很少用 */
+            flex-flow: row wrap;
+            justify-content: space-between;
+            /* 当弹性盒子父容器允许换行后, align-items 交叉轴对齐方式属性,在表现上会出现一些问题,因为该属性只能控制元素无法控制行与行的关系  */
+            /* align-items: center; */
+            /* align-content 多行元素交叉轴对齐方式
+                
+                flex-start 多行交叉轴起点处对齐
+                flex-end 多行交叉轴结尾处对齐
+                center 多行交叉轴居中对齐
+                space-between 第一行与最后一行在交叉轴两端紧贴对齐,行与行之间等分间距
+                space-between 第一行与最后一行在交叉轴两端留白对齐,行与行之间等分间距,间距是留白的2倍
+                stretch (默认值) 交叉轴高度等分对齐,若子元素没有设置交叉轴对应的尺寸,该元素的交叉轴尺寸将自动放大到等分尺寸
+
+           */
+            align-content: stretch;
+            margin: 10px auto;
+            width: 400px;
+            background-color: red;
+        }
+
+        /* 
+         */
+
+        .box2 div {
+            flex: 0 0 33%;
+            /* height: 44px; */
+            background-color: #ccc;
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <!-- 
+        弹性盒子是CSS3 新提出的布局方案,为前端开发人员提供一个元素对齐,项目之间在容器内空间分配更高效布局方式
+
+        flex分为两个元素 
+            容器 flex box  弹性盒子
+            子项 flex item 在弹性盒子内部,适配弹性盒子进行放大缩小对齐等操作的子元素
+
+        flex布局与方向无关,其核心主轴交叉轴,开发人员通过设置两个值从而达到控制元素布局方向,对齐等操作    
+     -->
+    <div class="box">
+        <p>123</p>
+        <p>ABC</p>
+        <p style="font-size: 24px ;">ABC</p>
+        <p>456</p>
+    </div>
+
+    <div class="demo">
+        <div class="center"></div>
+    </div>
+
+    <div class="box2">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+    </div>
+</body>
+
+</html>

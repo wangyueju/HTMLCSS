@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .box {
+            display: flex;
+            align-items: flex-start;
+            height: 400px;
+            background-color: pink;
+        }
+
+        p {
+            border: 1px solid red;
+        }
+
+        p:nth-child(1) {
+            /* 
+                order 表示的是弹性子项的权重,值越小越靠前显示
+                
+                align-self 子项支持自身单独设置与交叉轴的对齐方式
+            */
+            order: -1;
+            align-self: stretch;
+        }
+
+        p:nth-child(2) {
+            order: 999;
+        }
+
+        p:nth-child(3) {
+            order: -6;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        <p>1</p>
+        <p>2</p>
+        <p>3</p>    
+    </div>
+</body>
+</html>

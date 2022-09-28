@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./src/css/reset.css">
+    <link rel="stylesheet" href="./src/css/basic.css">
+    <style>
+        body {
+            font: 14px/1.5 Helvetica,sans-serif,STHeiTi;
+        }
+        .container {
+            width: 100vw;
+            height: 100vh;
+        }
+
+        /* 
+        css 的属性样式书写顺序有规范: 最能影响页面布局的往前写,对页面布局影响越小的往后写
+        display
+        float
+        position
+        z-index
+        盒子模型 外边距 边框 内边距 宽高
+        字体 
+        颜色
+        背景
+        
+     */
+        .tabbar {
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            height: 40px;
+            background-color: #fff;
+        }
+
+        .tabbar .tabbar-item {
+            width: 33.3%;
+            text-align: center;
+        }
+
+        .tabbar .tabbar-item .tabbar-text {
+            display: inline-block;
+            height: 40px;
+            line-height: 40px;
+            font-size: var(--tab-text);
+        }
+
+        .tabbar .tabbar-item .tabbar-text.active {
+            border-bottom: 2px solid var(--theme-red);
+            color: var(--theme-red);
+        }
+
+        .hot-top {
+            position: relative;
+            width: 100vw;
+            /* 
+            通过宽高比计算出来的
+            背景图片750 X 292
+            宽高比为 375∶146
+            约等于 100 : 38.9  
+
+             */
+            height: 38.9vw;
+            background-image: url(./src/images/hot_music_bg_2x.jpg);
+        }
+
+        .hot-top .title-img {
+            position: absolute;
+            top: 30px;
+            left: 20px;
+            z-index: 10;
+            width: 142px;
+            height: 67px;
+            background-image: url(./src/images/index.png);
+            background-size: 166px 97px;
+            background-position: -24px -127px;
+        }
+
+        .hot-top .hot-time {
+            position: absolute;
+            top: 110px;
+            left: 20px;
+            z-index: 10;
+            font-size: var(--hottime-text);
+            color: #fff;
+        }
+
+        .hot-top::after {
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(7, 17, 27, 0.2);
+            content: '';
+        }
+
+        .music-item {
+            position: relative;
+        }
+
+        .music-item::before {
+            display: block;
+            position: absolute;
+            left: 40px;
+            right: 0;
+            bottom: 0;
+            height: 1px;
+            background-color: blue;
+            content: '';
+        }
+
+        .music-item::after {
+            display: block;
+            clear: both;
+            content: '';
+        }
+
+        /* 前三个 */
+        .music-item:nth-child(-n + 3) .rank-num {
+            color: var(--hot-top);
+        }
+
+        .music-item .rank-num {
+            float: left;
+            width: 40px;   
+            font-size: var(--rank-text);
+            text-align: center;
+            line-height: 55.5px;
+            color: var(--hot-normal);
+
+        }
+
+        .music-item .muisc-desc {
+            float: left;
+            position: relative;
+            border-bottom: 1px solid rgba(7, 17, 27, 0.1);
+            padding: 6px 42px 6px 0;
+            /* css提供用来计算长度函数,支持不同长度单位之间进行运算 */
+            width: calc(100% - 40px);
+        }
+
+        .music-item .muisc-desc h2 {
+            overflow: hidden;
+            font-size: var(--music-name);
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            color: var(--text-black);
+        }
+
+        .music-item .muisc-desc p {
+            overflow: hidden;
+            font-size: var(--sub-title-text);
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            color: var(--text-gray);
+        }
+
+        .music-item .muisc-desc .sq-icon {
+            display: inline-block;
+            margin-right: 2px;
+            width: 12px;
+            height: 8px;  
+            background-image: url(./src/images/index.png);
+            background-size: 166px 97px;
+        }
+
+        .music-item .muisc-desc .play-icon {
+            display: block;
+            position: absolute;
+            right: 10px;
+            top: 17px;
+            width: 22px;
+            height: 22px;
+            background-image: url(./src/images/index.png);
+            background-size: 166px 97px;
+            background-position: -24px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="tabbar clear-fix">
+            <div class="tabbar-item float-l" >
+                <span class="tabbar-text">推荐音乐</span>
+            </div>
+            <div class="tabbar-item float-l">
+                <span class="tabbar-text active">热歌榜</span>
+
+            </div>
+            <div class="tabbar-item float-l">
+                <span class="tabbar-text">搜索</span>
+            </div>
+        </div>
+        <div class="hot-top">
+            <div class="title-img"></div>
+            <p class="hot-time">更新日期: 07月20日</p>
+        </div>
+        <ul>
+            <li class="music-item">
+                <div class="rank-num">01</div>
+                <div class="muisc-desc">
+                    <h2>再见莫妮卡</h2>
+                    <p>彭席彦 / Franky弗兰奇 - 再见莫妮卡</p>
+                    <i class="play-icon"></i>
+                </div>
+            </li>
+            <li class="music-item">
+                <div class="rank-num">02</div>
+                <div class="muisc-desc">
+                    <h2>小城夏天</h2>
+                    <p><i class="sq-icon"></i>LBI利比 - 小城夏天</p>
+                    <i class="play-icon"></i>
+                </div>
+            </li>
+            <li class="music-item">
+                <div class="rank-num">03</div>
+                <div class="muisc-desc">
+                    <h2>苦茶子</h2>
+                    <p><i class="sq-icon"></i>Starling8 / MoreLearn 27 / FIVESTAR - 苦茶子</p>
+                    <i class="play-icon"></i>
+                </div>
+            </li>
+            <li class="music-item">
+                <div class="rank-num">04</div>
+                <div class="muisc-desc">
+                    <h2>隆里电丝</h2>
+                    <p><i class="sq-icon"></i>盛宇D_SHINE / KEY.L刘聪 / ICE - 中国说唱巅峰对决 第四期</p>
+                    <i class="play-icon"></i>
+                </div>
+            </li>
+            <li class="music-item">
+                <div class="rank-num">05</div>
+                <div class="muisc-desc">
+                    <h2>隆里电丝</h2>
+                    <p><i class="sq-icon"></i>盛宇D_SHINE / KEY.L刘聪 / ICE - 中国说唱巅峰对决 第四期</p>
+                    <i class="play-icon"></i>
+                </div>
+            </li>
+            <li class="music-item">
+                <div class="rank-num">06</div>
+                <div class="muisc-desc">
+                    <h2>隆里电丝</h2>
+                    <p><i class="sq-icon"></i>盛宇D_SHINE / KEY.L刘聪 / ICE - 中国说唱巅峰对决 第四期</p>
+                    <i class="play-icon"></i>
+                </div>
+            </li>
+            <li class="music-item">
+                <div class="rank-num">07</div>
+                <div class="muisc-desc">
+                    <h2>隆里电丝</h2>
+                    <p><i class="sq-icon"></i>盛宇D_SHINE / KEY.L刘聪 / ICE - 中国说唱巅峰对决 第四期</p>
+                    <i class="play-icon"></i>
+                </div>
+            </li>
+            <li class="music-item">
+                <div class="rank-num">08</div>
+                <div class="muisc-desc">
+                    <h2>隆里电丝</h2>
+                    <p><i class="sq-icon"></i>盛宇D_SHINE / KEY.L刘聪 / ICE - 中国说唱巅峰对决 第四期</p>
+                    <i class="play-icon"></i>
+                </div>
+            </li>
+            <li class="music-item">
+                <div class="rank-num">09</div>
+                <div class="muisc-desc">
+                    <h2>隆里电丝</h2>
+                    <p><i class="sq-icon"></i>盛宇D_SHINE / KEY.L刘聪 / ICE - 中国说唱巅峰对决 第四期</p>
+                    <i class="play-icon"></i>
+                </div>
+            </li>
+            <li class="music-item">
+                <div class="rank-num">10</div>
+                <div class="muisc-desc">
+                    <h2>隆里电丝</h2>
+                    <p><i class="sq-icon"></i>盛宇D_SHINE / KEY.L刘聪 / ICE - 中国说唱巅峰对决 第四期</p>
+                    <i class="play-icon"></i>
+                </div>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>

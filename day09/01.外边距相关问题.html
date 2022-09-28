@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .p {
+            margin: 10px;
+        }
+
+        .div {
+            margin: 10px;
+        }
+
+        .box {
+            /* padding: 20px; */
+            /* border: 1px solid #ccc; */
+            background-color: pink;
+            /* overflow: hidden; */
+            min-height: 32px;
+        }
+
+
+
+        .box p {
+            margin-top: 100px;
+            margin-bottom: 100px;
+            background-color: aqua;
+        }
+
+        p {
+            float: left;
+            width: 270px;
+            margin: 10px;
+        }
+
+        p:nth-child(2) {
+
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+        块级元素的上下外边距会与另一个块级元素上下外边距重叠为一个单个边距
+    
+    <p class="p">hello world,p标签的下边距与下方div的上边距重叠了</p>
+    <div class="div">我是 一个div元素</div>
+    -->
+
+
+    <!-- 
+        父元素与其没有被其他内容分开的子元素
+
+        父元素如果没有边框,padding,行内内容,没有overflow: hidden;或者是行内元素,块级元素将其分开,子元素的上边距就会与父元素的上边距重叠
+        导致重叠部分溢出到父元素外部
+
+
+        父元素如果没有没有边框,padding,行内内容,没有overflow: hidden;或者是行内元素,块级元素将其分开,
+        或者没有设置height,min-height,max-height,margin-bottom也会溢出到父元素的外部
+     
+
+    <div class="box">
+        <p>hello</p>
+    </div>
+     <p>hello</p>
+    -->
+
+
+    <!-- 两个块级元素之间隔着一个空的元素(没有高度,没有边框,没有内边距,没有内容,display不能是inline-block,),这两个元素的上下外边距将会重叠 -->
+    <!-- <p>hello world</p> -->
+    <!-- <span style="display: inline-block"></span> -->
+    <!-- <p>hello world</p> -->
+
+    <!-- 
+        两个边距发生重叠时,保留值最大的边距,,若发生重叠元素包含负值,重叠后的边距为最大正边距与最小负边距的和
+     -->
+
+</body>
+
+</html>

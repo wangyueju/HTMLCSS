@@ -1,0 +1,28 @@
+@media screen and (max-width: 1200px) {
+    .content-wrap {
+        width: 960px;
+    }
+
+    .welcome {
+        width: 400px;
+    }
+
+    .header-wrap .bg-img {
+        bottom: 0;
+        width: 480px;
+    }
+
+    /* 第二栏响应式  */
+    .content-item {
+        width: 290px;
+    }
+
+    .content-item i {
+        left: 105px;
+    }
+
+    .content-item:nth-child(2) {
+        padding-bottom: 60px;
+    }
+
+}

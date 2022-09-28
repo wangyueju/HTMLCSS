@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            vertical-align 用来指定inline元素或表格元素的垂直对齐方式
+                baseline 使元素基线与父元素的基线对齐
+                top    元素与整行的顶部对齐
+                middle 元素的中部与 父元素基线+字体高度/2的位置对齐 
+                bottom 元素与整行的底部对齐
+                sub   元素的基线与父元素的下标基线对齐
+                text-top 元素的顶部与父元素的字体顶部对齐
+        */
+        .title {
+            font-weight: bold;
+            font-size: 16px;
+            line-height: 18px;
+            background-color: pink;
+            
+        }
+
+        .title span {
+            display: inline-block;
+            vertical-align: top;
+            font-size: 12px;
+            line-height: 18px;
+            padding: 0 5px;
+            border: 1px solid rgb(240, 40, 40);
+            color: rgb(240, 40, 40); ;
+        }
+
+        .tag {
+            font-size: 12px;
+            height: 22px;
+            line-height: 22px;
+            background-color: green;
+        }
+
+        .tag img {
+            vertical-align: text-top;
+        }
+
+        .tag span {
+            /* vertical-align: top; */
+            margin-left: 5px;
+            font-size: 12px;
+            /* line-height: 22px; */
+        }
+
+        table, td {
+            border: 1px solid #ccc;
+        }
+
+        td {
+            height: 100px;
+            /* vertical-align 控制表格元素文本内容在表格中的对齐方式 */
+            vertical-align: middle;
+        }
+
+        .menu-item {
+            /* 
+            这里  display 除了 block inline-block inline none 以外还支持 table-cell
+
+            display: table-cell;元素等价于一个td，这样就可以vertical-align将文本内容实现上 中 下对齐效果
+             */
+            display: table-cell;
+            vertical-align: middle;
+            box-sizing: border-box;
+            background-color: #ccc;
+            width: 80px;
+            height: 60px;
+            padding: 0px 10px;
+            font-size: 0;
+        }
+
+        .menu-item i{
+            display: inline-block;
+            /* 图标比文字大设置 vertical-align: top; 将文字拉上去*/
+            vertical-align: top;
+            width: 16px;
+            height: 16px;
+            background-image: url(./discout.png);
+            background-size: cover;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-right: 2px;
+        }
+
+        .menu-item span {
+            font-size: 12px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <p class="title">
+        <span>音乐推荐</span>  嘻哈不止街头 Hip Story 第1期 
+    </p>
+
+    <p class="tag">
+        <img src="./discout.png" width="23">
+        <span>你好</span> 
+    </p>
+
+    <table>
+        <tr>
+            <td>
+                123,<br>
+                123
+
+            </td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+    </table>
+    <ul>
+        <li>
+            <div class="menu-item">
+                <i></i><span>必选品·餐具</span>
+            </div>
+        </li>
+        <li>
+            <div class="menu-item">
+                <span>必选品</span>
+            </div>
+        </li>
+    </ul>
+    
+
+   
+</body>
+</html>
